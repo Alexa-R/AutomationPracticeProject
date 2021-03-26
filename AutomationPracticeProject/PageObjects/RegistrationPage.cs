@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace AutomationPracticeProject.PageObjects
 {
-    public class RegistrationPage
+    public class RegistrationPage : BasePage
     {
         private WrapperWebElement FirstNameInputField => new WrapperWebElement(By.XPath("//*[@id='customer_firstname']"));
         private WrapperWebElement LastNameInputField => new WrapperWebElement(By.XPath("//*[@id='customer_lastname']"));
@@ -44,18 +44,6 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info($"Entering of the City '{city}'");
             CityInputField.SendKeys(city);
-        }
-
-        public void ClickDropdown(string dropdownName)
-        {
-            LogHelper.Info($"Clicking on the {dropdownName} Dropdown Menu");
-            new WrapperWebElement(By.XPath($"//*[@id='id_{dropdownName}']")).Click();
-        }
-
-        public void ClickOptionFromDropdown(string dropdownName, string option)
-        {
-            LogHelper.Info($"Clicking on the {option} from {dropdownName} Dropdown Menu");
-            new WrapperWebElement(By.XPath($"//*[@id='id_{dropdownName}']//*[@value='{option}']")).Click();
         }
 
         public void EnterZipCode(string zipCode)

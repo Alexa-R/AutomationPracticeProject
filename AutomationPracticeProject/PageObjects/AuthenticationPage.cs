@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace AutomationPracticeProject.PageObjects
 {
-    public class AuthenticationPage
+    public class AuthenticationPage : BasePage
     {
         private WrapperWebElement EmailInputField => new WrapperWebElement(By.XPath("//*[@id='email']"));
         private WrapperWebElement PasswordInputField => new WrapperWebElement(By.XPath("//*[@id='passwd']"));

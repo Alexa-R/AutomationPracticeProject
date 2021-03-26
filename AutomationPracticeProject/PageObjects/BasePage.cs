@@ -23,6 +23,12 @@ namespace AutomationPracticeProject.PageObjects
             SignOutButton.Click();
         }
 
+        public void ClickContactUsButton()
+        {
+            LogHelper.Info("Clicking on the ContactUs Button");
+            ContactUsButton.Click();
+        }
+
         public bool IsSignInButtonDisplayed()
         {
             LogHelper.Info("Checking the display of the SignIn Button");
@@ -39,6 +45,18 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info("Checking the display of the Account Button");
             return AccountButton.Displayed;
+        }
+
+        public void ClickDropdown(string dropdownName)
+        {
+            LogHelper.Info($"Clicking on the {dropdownName} Dropdown Menu");
+            new WrapperWebElement(By.XPath($"//*[@id='id_{dropdownName}']")).Click();
+        }
+
+        public void ClickOptionFromDropdown(string dropdownName, string option)
+        {
+            LogHelper.Info($"Clicking on the {option} from {dropdownName} Dropdown Menu");
+            new WrapperWebElement(By.XPath($"//*[@id='id_{dropdownName}']//*[@value='{option}']")).Click();
         }
 
         public void LogIn(string login, string password)

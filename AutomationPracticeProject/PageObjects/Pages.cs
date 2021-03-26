@@ -14,5 +14,7 @@
         public static AuthenticationPage AuthenticationPage => GetPage<AuthenticationPage>();
 
         public static RegistrationPage RegistrationPage => GetPage<RegistrationPage>();
+
+        public static ContactPage ContactPage => GetPage<ContactPage>();
     }
 }

@@ -490,6 +490,7 @@
     <Compile Include="Constants\CountriesDropdownConstants.cs" />
     <Compile Include="Constants\DropdownNamesConstants.cs" />
     <Compile Include="Constants\StatesDropdownConstants.cs" />
+    <Compile Include="Constants\SubjectHeadingDropdownConstants.cs" />
     <Compile Include="Helpers\ExtentReportsHelper.cs" />
     <Compile Include="Helpers\GMailHelper.cs" />
     <Compile Include="Helpers\LogHelper.cs" />
@@ -497,6 +498,7 @@
     <Compile Include="Helpers\WaitHelper.cs" />
     <Compile Include="PageObjects\AuthenticationPage.cs" />
     <Compile Include="PageObjects\BasePage.cs" />
+    <Compile Include="PageObjects\ContactPage.cs" />
     <Compile Include="PageObjects\Pages.cs" />
     <Compile Include="PageObjects\RegistrationPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -504,6 +506,7 @@
     <Compile Include="TestCases\Authentication\Login.cs" />
     <Compile Include="TestCases\BaseSuite.cs" />
     <Compile Include="TestCases\BaseTest.cs" />
+    <Compile Include="TestCases\ContactPage\SendMessage.cs" />
     <Compile Include="WrapperElement\WrapperWebElement.cs" />
     <Compile Include="WrapperFactory\WebDriverFactory.cs" />
   </ItemGroup>
@@ -525,13 +528,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TestCases\Cart\" />
-    <Folder Include="TestCases\Checkout\" />
-    <Folder Include="TestCases\ContactPage\" />
     <Folder Include="TestCases\HomePage\" />
     <Folder Include="TestCases\MyAccount\" />
     <Folder Include="TestCases\PDP\" />
     <Folder Include="TestCases\PLP\" />
     <Folder Include="TestCases\Search\" />
+    <Folder Include="TestCases\UserFlow\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Drivers\chromedriver.exe" />

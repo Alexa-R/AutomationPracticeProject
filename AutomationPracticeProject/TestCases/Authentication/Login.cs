@@ -37,11 +37,11 @@ namespace AutomationPracticeProject.TestCases.Authentication
             Pages.RegistrationPage.EnterPassword(password);
             Pages.RegistrationPage.EnterAddress(address);
             Pages.RegistrationPage.EnterCity(city);
-            Pages.RegistrationPage.ClickDropdown(DropdownNamesConstants.StateDropdown);
-            Pages.RegistrationPage.ClickOptionFromDropdown(DropdownNamesConstants.StateDropdown, StatesDropdownConstants.Alabama);
+            Pages.BasePage.ClickDropdown(DropdownNamesConstants.StateDropdown);
+            Pages.BasePage.ClickOptionFromDropdown(DropdownNamesConstants.StateDropdown, StatesDropdownConstants.Alabama);
             Pages.RegistrationPage.EnterZipCode(zipCode);
-            Pages.RegistrationPage.ClickDropdown(DropdownNamesConstants.CountryDropdown);
-            Pages.RegistrationPage.ClickOptionFromDropdown(DropdownNamesConstants.CountryDropdown, CountriesDropdownConstants.UnitedStates);
+            Pages.BasePage.ClickDropdown(DropdownNamesConstants.CountryDropdown);
+            Pages.BasePage.ClickOptionFromDropdown(DropdownNamesConstants.CountryDropdown, CountriesDropdownConstants.UnitedStates);
             Pages.RegistrationPage.EnterMobilePhone(mobilePhone);
             Pages.RegistrationPage.ClearAddressAliasInputField();
             Pages.RegistrationPage.EnterAddressAlias(addressAlias);
