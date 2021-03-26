@@ -500,6 +500,7 @@
     <Compile Include="PageObjects\Pages.cs" />
     <Compile Include="PageObjects\RegistrationPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\AccountManagement\Logout.cs" />
     <Compile Include="TestCases\Authentication\Login.cs" />
     <Compile Include="TestCases\BaseSuite.cs" />
     <Compile Include="TestCases\BaseTest.cs" />
