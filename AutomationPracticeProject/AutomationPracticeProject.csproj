@@ -487,6 +487,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\CountriesDropdownConstants.cs" />
+    <Compile Include="Constants\DropdownNamesConstants.cs" />
+    <Compile Include="Constants\StatesDropdownConstants.cs" />
     <Compile Include="Helpers\ExtentReportsHelper.cs" />
     <Compile Include="Helpers\GMailHelper.cs" />
     <Compile Include="Helpers\LogHelper.cs" />
@@ -495,6 +498,7 @@
     <Compile Include="PageObjects\AuthenticationPage.cs" />
     <Compile Include="PageObjects\BasePage.cs" />
     <Compile Include="PageObjects\Pages.cs" />
+    <Compile Include="PageObjects\RegistrationPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCases\Authentication\Login.cs" />
     <Compile Include="TestCases\BaseSuite.cs" />
@@ -519,7 +523,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Constants\" />
     <Folder Include="TestCases\Cart\" />
     <Folder Include="TestCases\Checkout\" />
     <Folder Include="TestCases\ContactPage\" />

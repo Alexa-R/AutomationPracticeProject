@@ -9,6 +9,8 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement EmailInputField => new WrapperWebElement(By.XPath("//*[@id='email']"));
         private WrapperWebElement PasswordInputField => new WrapperWebElement(By.XPath("//*[@id='passwd']"));
         private WrapperWebElement SignInButton => new WrapperWebElement(By.XPath("//*[@id='SubmitLogin']"));
+        private WrapperWebElement RegistrationEmailInputField => new WrapperWebElement(By.XPath("//*[@id='email_create']"));
+        private WrapperWebElement CreateAnAccountButton => new WrapperWebElement(By.XPath("//*[@id='SubmitCreate']"));
 
         public void EnterEmail(string mail)
         {
@@ -20,6 +22,18 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info($"Entering of the Password '{password}'");
             PasswordInputField.SendKeys(password);
+        }
+
+        public void EnterRegistrationEmail(string mail)
+        {
+            LogHelper.Info($"Entering of the Registration Email '{mail}'");
+            RegistrationEmailInputField.SendKeys(mail);
+        }
+
+        public void ClickCreateAnAccountButton()
+        {
+            LogHelper.Info("Clicking on the CreateAnAccount Button");
+            CreateAnAccountButton.Click();
         }
 
         public void ClickSignInButton()

@@ -13,19 +13,19 @@ namespace AutomationPracticeProject.PageObjects
 
         public void ClickSignInButton()
         {
-            LogHelper.Info("Clicking on the Sign In Button");
+            LogHelper.Info("Clicking on the SignIn Button");
             SignInButton.Click();
         }
 
         public bool IsSignOutButtonDisplayed()
         {
-            LogHelper.Info("Checking the display of the Sign Out Button");
+            LogHelper.Info("Checking the display of the SignOut Button");
             return SignOutButton.Displayed;
         }
 
         public bool IsContactUsButtonDisplayed()
         {
-            LogHelper.Info("Checking the display of the Contact Us Button");
+            LogHelper.Info("Checking the display of the ContactUs Button");
             return ContactUsButton.Displayed;
         }
 

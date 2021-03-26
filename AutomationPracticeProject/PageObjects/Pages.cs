@@ -12,5 +12,7 @@
         public static BasePage BasePage => GetPage<BasePage>();
 
         public static AuthenticationPage AuthenticationPage => GetPage<AuthenticationPage>();
+
+        public static RegistrationPage RegistrationPage => GetPage<RegistrationPage>();
     }
 }
