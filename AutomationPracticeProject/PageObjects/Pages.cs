@@ -16,5 +16,7 @@
         public static RegistrationPage RegistrationPage => GetPage<RegistrationPage>();
 
         public static ContactPage ContactPage => GetPage<ContactPage>();
+
+        public static HomePage HomePage => GetPage<HomePage>();
     }
 }

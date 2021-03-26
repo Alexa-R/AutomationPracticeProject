@@ -499,6 +499,7 @@
     <Compile Include="PageObjects\AuthenticationPage.cs" />
     <Compile Include="PageObjects\BasePage.cs" />
     <Compile Include="PageObjects\ContactPage.cs" />
+    <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="PageObjects\Pages.cs" />
     <Compile Include="PageObjects\RegistrationPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -507,6 +508,7 @@
     <Compile Include="TestCases\BaseSuite.cs" />
     <Compile Include="TestCases\BaseTest.cs" />
     <Compile Include="TestCases\ContactPage\SendMessage.cs" />
+    <Compile Include="TestCases\HomePage\AddProduct.cs" />
     <Compile Include="WrapperElement\WrapperWebElement.cs" />
     <Compile Include="WrapperFactory\WebDriverFactory.cs" />
   </ItemGroup>
@@ -528,7 +530,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TestCases\Cart\" />
-    <Folder Include="TestCases\HomePage\" />
     <Folder Include="TestCases\MyAccount\" />
     <Folder Include="TestCases\PDP\" />
     <Folder Include="TestCases\PLP\" />
