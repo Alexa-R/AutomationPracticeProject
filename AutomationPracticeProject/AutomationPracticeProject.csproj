@@ -492,25 +492,34 @@
     <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Helpers\RandomHelper.cs" />
     <Compile Include="Helpers\WaitHelper.cs" />
+    <Compile Include="PageObjects\AuthenticationPage.cs" />
+    <Compile Include="PageObjects\BasePage.cs" />
+    <Compile Include="PageObjects\Pages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\Authentication\Login.cs" />
     <Compile Include="TestCases\BaseSuite.cs" />
     <Compile Include="TestCases\BaseTest.cs" />
     <Compile Include="WrapperElement\WrapperWebElement.cs" />
     <Compile Include="WrapperFactory\WebDriverFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="allureConfig.json" />
-    <None Include="allureConfig.Template.json" />
+    <None Include="allureConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="App.config" />
-    <None Include="Configurations\Environment.config" />
-    <None Include="credentials.json" />
-    <None Include="log4net.config" />
+    <None Include="Configurations\Environment.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Constants\" />
-    <Folder Include="PageObjects\" />
-    <Folder Include="TestCases\Authentication\" />
     <Folder Include="TestCases\Cart\" />
     <Folder Include="TestCases\Checkout\" />
     <Folder Include="TestCases\ContactPage\" />
