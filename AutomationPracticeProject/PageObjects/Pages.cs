@@ -26,5 +26,7 @@
         public static AddressesPage AddressesPage => GetPage<AddressesPage>();
 
         public static AddressForm AddressForm => GetPage<AddressForm>();
+
+        public static MyWishListsPage MyWishListsPage => GetPage<MyWishListsPage>();
     }
 }

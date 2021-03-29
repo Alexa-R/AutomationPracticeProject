@@ -503,6 +503,7 @@
     <Compile Include="PageObjects\ContactPage.cs" />
     <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="PageObjects\MyAccountPage.cs" />
+    <Compile Include="PageObjects\MyWishListsPage.cs" />
     <Compile Include="PageObjects\Pages.cs" />
     <Compile Include="PageObjects\PersonalInformationForm.cs" />
     <Compile Include="PageObjects\RegistrationForm.cs" />
@@ -514,6 +515,7 @@
     <Compile Include="TestCases\ContactPage\SendMessage.cs" />
     <Compile Include="TestCases\HomePage\AddProduct.cs" />
     <Compile Include="TestCases\MyAccount\MyAddresses.cs" />
+    <Compile Include="TestCases\MyAccount\MyWishLists.cs" />
     <Compile Include="TestCases\MyAccount\PersonalInformation.cs" />
     <Compile Include="WrapperElement\WrapperWebElement.cs" />
     <Compile Include="WrapperFactory\WebDriverFactory.cs" />
