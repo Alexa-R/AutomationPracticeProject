@@ -22,6 +22,8 @@ namespace AutomationPracticeProject.TestCases.MyAccount
             Pages.AddressesPage.ClickAddNewAddressButton();
             Pages.AddressForm.CreateNewAddress(address, city, StatesDropdownConstants.Alabama, zipCode, CountriesDropdownConstants.UnitedStates, mobilePhone, addressAlias);
             Assert.That(Pages.AddressesPage.GetLastAddressCardText(), Contains.Substring(addressAlias.ToUpper()));
+
+            Pages.AddressesPage.DeleteLastAddress();
         }
 
         [Test]
@@ -37,6 +39,19 @@ namespace AutomationPracticeProject.TestCases.MyAccount
             Pages.AddressForm.EnterCity(updateCity);
             Pages.AddressForm.ClickSaveButton();
             Assert.That(Pages.AddressesPage.GetLastAddressCardText(), Contains.Substring(updateCity));
+
+            Pages.AddressesPage.DeleteLastAddress();
+        }
+
+        [Test]
+        public void DeleteAddress()
+        {
+            Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
+            Pages.MyAccountPage.ClickMyAddressesButton();
+            Pages.AddressesPage.ClickAddNewAddressButton();
+            Pages.AddressForm.CreateNewAddress(address, city, StatesDropdownConstants.Alabama, zipCode, CountriesDropdownConstants.UnitedStates, mobilePhone, addressAlias);
+            Pages.AddressesPage.DeleteLastAddress();
+            Assert.That(Pages.AddressesPage.GetLastAddressCardText(), !Contains.Substring(addressAlias.ToUpper()));
         }
     }
 }

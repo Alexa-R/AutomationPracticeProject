@@ -1,5 +1,6 @@
 ﻿using AutomationPracticeProject.Helpers;
 using AutomationPracticeProject.WrapperElement;
+using AutomationPracticeProject.WrapperFactory;
 using OpenQA.Selenium;
 
 namespace AutomationPracticeProject.PageObjects
@@ -71,6 +72,11 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info("Getting the Account Button Title");
             return AccountButton.Text;
+        }
+
+        public void AcceptAlert()
+        {
+            WebDriverFactory.Driver.SwitchTo().Alert().Accept();
         }
     }
 }
