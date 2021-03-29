@@ -21,7 +21,7 @@ namespace AutomationPracticeProject.TestCases.Authentication
         {
             var registrationEmail = $"{RandomHelper.GetRandomStringWithNumbers(8)}@mail.ru";
             var firstName = $"FirstName{RandomHelper.GetRandomString(8)}";
-            var lastName = $"FirstName{RandomHelper.GetRandomString(8)}";
+            var lastName = $"LastName{RandomHelper.GetRandomString(8)}";
             var password = $"Password{RandomHelper.GetRandomStringWithNumbers(8)}";
             var address = $"Address{RandomHelper.GetRandomString(8)}";
             var city = $"City{RandomHelper.GetRandomString(8)}";

@@ -66,5 +66,11 @@ namespace AutomationPracticeProject.PageObjects
             Pages.AuthenticationPage.EnterPassword(password);
             Pages.AuthenticationPage.ClickSignInButton();
         }
+
+        public string GetAccountButtonText()
+        {
+            LogHelper.Info("Getting the Account Button Title");
+            return AccountButton.Text;
+        }
     }
 }

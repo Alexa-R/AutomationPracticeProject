@@ -18,5 +18,9 @@
         public static ContactPage ContactPage => GetPage<ContactPage>();
 
         public static HomePage HomePage => GetPage<HomePage>();
+
+        public static MyAccountPage MyAccountPage => GetPage<MyAccountPage>();
+
+        public static PersonalInformationPage PersonalInformationPage => GetPage<PersonalInformationPage>();
     }
 }

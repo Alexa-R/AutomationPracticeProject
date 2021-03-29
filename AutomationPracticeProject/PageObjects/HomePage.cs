@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace AutomationPracticeProject.PageObjects
 {
-    public class HomePage
+    public class HomePage : BasePage
     {
         private WrapperWebElement CartPopup => new WrapperWebElement(By.XPath("//*[@id='layer_cart']"));
         private WrapperWebElement ProceedToCheckoutButton => new WrapperWebElement(By.XPath("//*[@id='layer_cart']"));
