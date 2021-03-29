@@ -496,6 +496,7 @@
     <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Helpers\RandomHelper.cs" />
     <Compile Include="Helpers\WaitHelper.cs" />
+    <Compile Include="PageObjects\AddressPage.cs" />
     <Compile Include="PageObjects\AuthenticationPage.cs" />
     <Compile Include="PageObjects\BasePage.cs" />
     <Compile Include="PageObjects\ContactPage.cs" />
@@ -511,6 +512,7 @@
     <Compile Include="TestCases\BaseTest.cs" />
     <Compile Include="TestCases\ContactPage\SendMessage.cs" />
     <Compile Include="TestCases\HomePage\AddProduct.cs" />
+    <Compile Include="TestCases\MyAccount\MyAddresses.cs" />
     <Compile Include="TestCases\MyAccount\PersonalInformation.cs" />
     <Compile Include="WrapperElement\WrapperWebElement.cs" />
     <Compile Include="WrapperFactory\WebDriverFactory.cs" />

@@ -22,5 +22,7 @@
         public static MyAccountPage MyAccountPage => GetPage<MyAccountPage>();
 
         public static PersonalInformationPage PersonalInformationPage => GetPage<PersonalInformationPage>();
+
+        public static AddressPage AddressPage => GetPage<AddressPage>();
     }
 }

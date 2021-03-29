@@ -61,7 +61,7 @@ namespace AutomationPracticeProject.PageObjects
 
         public void LogIn(string login, string password)
         {
-            Pages.BasePage.ClickSignInButton();
+            ClickSignInButton();
             Pages.AuthenticationPage.EnterEmail(login);
             Pages.AuthenticationPage.EnterPassword(password);
             Pages.AuthenticationPage.ClickSignInButton();
