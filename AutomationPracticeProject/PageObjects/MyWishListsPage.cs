@@ -24,7 +24,26 @@ namespace AutomationPracticeProject.PageObjects
 
         public string GetWishListsTableText()
         {
+            LogHelper.Info("Getting the WishLists Table Text");
             return WishListsTable.Text;
+        }
+        
+        public void ClickWishListDeleteButton(string wishListName)
+        {
+            LogHelper.Info("Clicking on the WishList Delete Button");
+            new WrapperWebElement(By.XPath($"//tr[.//*[contains(text(),'{wishListName}')]]//*[@class='icon-remove']")).Click();
+        }
+        
+        public void CreateWishList(string wishListName)
+        {
+            EnterWishListName(wishListName);
+            ClickSaveButton();
+        }
+
+        public void DeleteWishList(string wishListName)
+        {
+            ClickWishListDeleteButton(wishListName);
+            Pages.BasePage.AcceptAlert();
         }
     }
 }
