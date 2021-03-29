@@ -14,11 +14,11 @@ namespace AutomationPracticeProject.TestCases.MyAccount
 
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
             Pages.MyAccountPage.ClickMyPersonalInformationButton();
-            Pages.PersonalInformationPage.ClearLastNameInputField();
-            Pages.PersonalInformationPage.EnterLastName(lastName);
-            Pages.PersonalInformationPage.EnterCurrentPassword(ConfigurationManager.AppSettings["Password"]);
-            Pages.PersonalInformationPage.ClickSaveButton();
-            Assert.IsTrue(Pages.PersonalInformationPage.IsSuccessAlertDisplayed());
+            Pages.PersonalInformationForm.ClearLastNameInputField();
+            Pages.PersonalInformationForm.EnterLastName(lastName);
+            Pages.PersonalInformationForm.EnterCurrentPassword(ConfigurationManager.AppSettings["Password"]);
+            Pages.PersonalInformationForm.ClickSaveButton();
+            Assert.IsTrue(Pages.PersonalInformationForm.IsSuccessAlertDisplayed());
             Assert.That(Pages.BasePage.GetAccountButtonText(), Contains.Substring(lastName));
         }
     }

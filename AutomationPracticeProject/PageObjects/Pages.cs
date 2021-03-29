@@ -13,7 +13,7 @@
 
         public static AuthenticationPage AuthenticationPage => GetPage<AuthenticationPage>();
 
-        public static RegistrationPage RegistrationPage => GetPage<RegistrationPage>();
+        public static RegistrationForm RegistrationForm => GetPage<RegistrationForm>();
 
         public static ContactPage ContactPage => GetPage<ContactPage>();
 
@@ -21,8 +21,10 @@
 
         public static MyAccountPage MyAccountPage => GetPage<MyAccountPage>();
 
-        public static PersonalInformationPage PersonalInformationPage => GetPage<PersonalInformationPage>();
+        public static PersonalInformationForm PersonalInformationForm => GetPage<PersonalInformationForm>();
 
-        public static AddressPage AddressPage => GetPage<AddressPage>();
+        public static AddressesPage AddressesPage => GetPage<AddressesPage>();
+
+        public static AddressForm AddressForm => GetPage<AddressForm>();
     }
 }

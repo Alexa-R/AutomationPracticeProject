@@ -1,25 +1,37 @@
-﻿using AutomationPracticeProject.Constants;
-using AutomationPracticeProject.Helpers;
+﻿using AutomationPracticeProject.Helpers;
 using AutomationPracticeProject.WrapperElement;
 using OpenQA.Selenium;
 
 namespace AutomationPracticeProject.PageObjects
 {
-    public class AddressPage
+    public class RegistrationForm : BasePage
     {
-        private WrapperWebElement AddNewAddressButton => new WrapperWebElement(By.XPath("//*[@title='Add an address']"));
+        private WrapperWebElement FirstNameInputField => new WrapperWebElement(By.XPath("//*[@id='customer_firstname']"));
+        private WrapperWebElement LastNameInputField => new WrapperWebElement(By.XPath("//*[@id='customer_lastname']"));
+        private WrapperWebElement PasswordInputField => new WrapperWebElement(By.XPath("//*[@id='passwd']"));
         private WrapperWebElement AddressInputField => new WrapperWebElement(By.XPath("//*[@id='address1']"));
         private WrapperWebElement CityInputField => new WrapperWebElement(By.XPath("//*[@id='city']"));
         private WrapperWebElement ZipCodeInputField => new WrapperWebElement(By.XPath("//*[@id='postcode']"));
         private WrapperWebElement MobilePhoneInputField => new WrapperWebElement(By.XPath("//*[@id='phone_mobile']"));
         private WrapperWebElement AddressAliasInputField => new WrapperWebElement(By.XPath("//*[@id='alias']"));
-        private WrapperWebElement SaveButton => new WrapperWebElement(By.XPath("//*[@id='submitAddress']"));
-        private WrapperWebElement LastAddressCardTitle => new WrapperWebElement(By.XPath("//*[contains(@class,'last_item') and contains(@class,'item box')]//*[@class='page-subheading']"));
+        private WrapperWebElement RegisterButton => new WrapperWebElement(By.XPath("//*[@id='submitAccount']"));
 
-        public void ClickAddNewAddressButton()
+        public void EnterFirstName(string firstName)
         {
-            LogHelper.Info("Clicking on the Add New Address Button");
-            AddNewAddressButton.Click();
+            LogHelper.Info($"Entering of the First Name '{firstName}'");
+            FirstNameInputField.SendKeys(firstName);
+        }
+
+        public void EnterLastName(string lastName)
+        {
+            LogHelper.Info($"Entering of the Last Name '{lastName}'");
+            LastNameInputField.SendKeys(lastName);
+        }
+
+        public void EnterPassword(string password)
+        {
+            LogHelper.Info($"Entering of the Password '{password}'");
+            PasswordInputField.SendKeys(password);
         }
 
         public void EnterAddress(string address)
@@ -58,31 +70,10 @@ namespace AutomationPracticeProject.PageObjects
             AddressAliasInputField.Clear();
         }
 
-        public void ClickSaveButton()
+        public void ClickRegisterButton()
         {
-            LogHelper.Info("Clicking on the Save Button");
-            SaveButton.Click();
-        }
-
-        public string GetLastAddressCardTitleText()
-        {
-            LogHelper.Info("Getting the Last Address Card Title Text");
-            return LastAddressCardTitle.Text;
-        }
-
-        public void CreateNewAddress(string address, string city,  string state, string zipCode, string country, string mobilePhone, string addressAlias)
-        {
-            EnterAddress(address);
-            EnterCity(city);
-            Pages.BasePage.ClickDropdown(DropdownNamesConstants.StateDropdown);
-            Pages.BasePage.ClickOptionFromDropdown(DropdownNamesConstants.StateDropdown, state);
-            EnterZipCode(zipCode);
-            Pages.BasePage.ClickDropdown(DropdownNamesConstants.CountryDropdown);
-            Pages.BasePage.ClickOptionFromDropdown(DropdownNamesConstants.CountryDropdown, country);
-            EnterMobilePhone(mobilePhone);
-            ClearAddressAliasInputField();
-            EnterAddressAlias(addressAlias);
-            ClickSaveButton();
+            LogHelper.Info("Clicking on the Register Button");
+            RegisterButton.Click();
         }
     }
 }

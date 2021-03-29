@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace AutomationPracticeProject.PageObjects
 {
-    public class PersonalInformationPage : BasePage
+    public class PersonalInformationForm : BasePage
     {
         private WrapperWebElement CurrentPasswordInputField => new WrapperWebElement(By.XPath("//*[@id='old_passwd']"));
         private WrapperWebElement LastNameInputField => new WrapperWebElement(By.XPath("//*[@id='lastname']"));
