@@ -23,5 +23,23 @@ namespace AutomationPracticeProject.TestCases.UserFlow
             Pages.CheckoutPage.ClickIConfirmMyOrderButton();
             Assert.That(Pages.CheckoutPage.GetOrderConfirmationTitleText(), Contains.Substring("is complete"));
         }
+
+        [Test]
+        public void CheckoutUsingCheck()
+        {
+            Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
+            Pages.MyAccountPage.ClickHomeButton();
+            Pages.HomePage.MoveToProductCard(1);
+            Pages.HomePage.ClickAddToCartButtonInCard(1);
+            Pages.HomePage.WaitUntilCartPopupIsDisplayed();
+            Pages.HomePage.ClickProceedToCheckoutButton();
+            Pages.CheckoutPage.ClickProceedToCheckoutButton();
+            Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
+            Pages.CheckoutPage.ClickTermsOfServiceAgreementCheckBox();
+            Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
+            Pages.CheckoutPage.ClickPayByCheckButton();
+            Pages.CheckoutPage.ClickIConfirmMyOrderButton();
+            Assert.IsTrue(Pages.CheckoutPage.IsSuccessAlertDisplayed());
+        }
     }
 }
