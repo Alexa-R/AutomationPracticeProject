@@ -9,6 +9,7 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement MyPersonalInformationButton => new WrapperWebElement(By.XPath("//*[@title='Information']"));
         private WrapperWebElement MyAddressesButton => new WrapperWebElement(By.XPath("//*[@title='Addresses']"));
         private WrapperWebElement MyWishListsButton => new WrapperWebElement(By.XPath("//*[@title='My wishlists']"));
+        private WrapperWebElement HomeButton => new WrapperWebElement(By.XPath("//*[@title='Home']"));
 
         public void ClickMyPersonalInformationButton()
         {
@@ -26,6 +27,12 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info("Clicking on the My WishLists Button");
             MyWishListsButton.Click();
+        }
+
+        public void ClickHomeButton()
+        {
+            LogHelper.Info("Clicking on the Home Button");
+            HomeButton.Click();
         }
     }
 }

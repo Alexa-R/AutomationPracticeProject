@@ -500,6 +500,7 @@
     <Compile Include="PageObjects\AddressForm.cs" />
     <Compile Include="PageObjects\AuthenticationPage.cs" />
     <Compile Include="PageObjects\BasePage.cs" />
+    <Compile Include="PageObjects\CheckoutPage.cs" />
     <Compile Include="PageObjects\ContactPage.cs" />
     <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="PageObjects\MyAccountPage.cs" />
@@ -517,6 +518,7 @@
     <Compile Include="TestCases\MyAccount\MyAddresses.cs" />
     <Compile Include="TestCases\MyAccount\MyWishLists.cs" />
     <Compile Include="TestCases\MyAccount\PersonalInformation.cs" />
+    <Compile Include="TestCases\UserFlow\Checkout.cs" />
     <Compile Include="WrapperElement\WrapperWebElement.cs" />
     <Compile Include="WrapperFactory\WebDriverFactory.cs" />
   </ItemGroup>
@@ -541,7 +543,6 @@
     <Folder Include="TestCases\PDP\" />
     <Folder Include="TestCases\PLP\" />
     <Folder Include="TestCases\Search\" />
-    <Folder Include="TestCases\UserFlow\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Drivers\chromedriver.exe" />

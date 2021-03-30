@@ -7,7 +7,13 @@ namespace AutomationPracticeProject.PageObjects
     public class HomePage : BasePage
     {
         private WrapperWebElement CartPopup => new WrapperWebElement(By.XPath("//*[@id='layer_cart']"));
-        private WrapperWebElement ProceedToCheckoutButton => new WrapperWebElement(By.XPath("//*[@id='layer_cart']"));
+        private WrapperWebElement ProceedToCheckoutButton => new WrapperWebElement(By.XPath("//*[@title='Proceed to checkout']"));
+
+        public void MoveToProductCard(int productCardIndex)
+        {
+            LogHelper.Info($"Moving to {productCardIndex} product card");
+            new WrapperWebElement(By.XPath($"//*[@id='homefeatured']//*[@class='product-container'][.//*[@data-id-product={productCardIndex}]]")).MoveToElement();
+        }
 
         public void ClickAddToCartButtonInCard(int productCardIndex)
         {

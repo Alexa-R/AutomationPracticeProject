@@ -8,6 +8,7 @@ namespace AutomationPracticeProject.TestCases.HomePage
         [Test]
         public void AbilityToAddProduct()
         {
+            Pages.HomePage.MoveToProductCard(1);
             Pages.HomePage.ClickAddToCartButtonInCard(1);
             Pages.HomePage.WaitUntilCartPopupIsDisplayed();
             Pages.HomePage.ClickProceedToCheckoutButton();

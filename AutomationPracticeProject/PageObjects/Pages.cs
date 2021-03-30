@@ -28,5 +28,7 @@
         public static AddressForm AddressForm => GetPage<AddressForm>();
 
         public static MyWishListsPage MyWishListsPage => GetPage<MyWishListsPage>();
+
+        public static CheckoutPage CheckoutPage => GetPage<CheckoutPage>();
     }
 }

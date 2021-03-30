@@ -11,6 +11,7 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement SignOutButton => new WrapperWebElement(By.XPath("//*[@class='logout']"));
         private WrapperWebElement ContactUsButton => new WrapperWebElement(By.XPath("//*[@id='contact-link']"));
         private WrapperWebElement AccountButton => new WrapperWebElement(By.XPath("//*[@class='account']"));
+        private WrapperWebElement SearchInputField => new WrapperWebElement(By.XPath("//*[@id='search_query_top']"));
 
         public void ClickSignInButton()
         {
@@ -76,7 +77,20 @@ namespace AutomationPracticeProject.PageObjects
 
         public void AcceptAlert()
         {
+            LogHelper.Info("Accepting of Alert");
             WebDriverFactory.Driver.SwitchTo().Alert().Accept();
+        }
+
+        public void ClickItemFromSearchResultPopup(int resultItemIndex)
+        {
+            LogHelper.Info("Clicking on the WishList Delete Button");
+            new WrapperWebElement(By.XPath($"//*[@class='ac_results']//li[{resultItemIndex}]")).Click();
+        }
+        
+        public void EnterItemInSearchInputField(string itemName)
+        {
+            LogHelper.Info($"Searching for '{itemName}' in search input field");
+            SearchInputField.SendKeys(itemName);
         }
     }
 }
