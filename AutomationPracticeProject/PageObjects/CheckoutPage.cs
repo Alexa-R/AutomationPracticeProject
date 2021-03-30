@@ -1,4 +1,5 @@
-﻿using AutomationPracticeProject.Helpers;
+﻿using System;
+using AutomationPracticeProject.Helpers;
 using AutomationPracticeProject.WrapperElement;
 using OpenQA.Selenium;
 
@@ -13,6 +14,7 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement PayByCheckButton => new WrapperWebElement(By.XPath("//*[@class='cheque']"));
         private WrapperWebElement IConfirmMyOrderButton => new WrapperWebElement(By.XPath("//*[@id='cart_navigation']//*[@type='submit']"));
         private WrapperWebElement OrderConfirmationTitle => new WrapperWebElement(By.XPath("//*[@class='cheque-indent']"));
+        private WrapperWebElement OrderConfirmationBox => new WrapperWebElement(By.XPath("//*[@class='box order-confirmation']"));
         private WrapperWebElement SuccessAlert => new WrapperWebElement(By.XPath("//*[@class='alert alert-success']"));
         private WrapperWebElement AddNewAddressButton => new WrapperWebElement(By.XPath("//*[@title='Add']"));
         private WrapperWebElement EqualityAddressesCheckBox => new WrapperWebElement(By.XPath("//*[@id='uniform-addressesAreEquals']"));
@@ -81,6 +83,15 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info($"Clicking on the {addressName} from {dropdownName} Dropdown Menu");
             new WrapperWebElement(By.XPath($"//*[@id='id_{dropdownName}']//*[contains(text(),'{addressName}')]")).Click();
+        }
+
+        public string GetOrderReference()
+        {
+            var orderConfirmationText = OrderConfirmationBox.Text;
+            var startWith = "reference";
+            var substring = orderConfirmationText.Substring(orderConfirmationText.IndexOf(startWith, StringComparison.Ordinal)+1);
+            var orderConfirmationArray = substring.Trim().Split(new char[] { ' ', '.', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            return orderConfirmationArray[1];
         }
     }
 }
