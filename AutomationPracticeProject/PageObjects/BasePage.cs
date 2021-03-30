@@ -49,6 +49,12 @@ namespace AutomationPracticeProject.PageObjects
             return AccountButton.Displayed;
         }
 
+        public void ClickAccountButton()
+        {
+            LogHelper.Info("Clicking on the Account Button");
+            AccountButton.Click();
+        }
+
         public void ClickDropdown(string dropdownName)
         {
             LogHelper.Info($"Clicking on the {dropdownName} Dropdown Menu");

@@ -63,14 +63,45 @@ namespace AutomationPracticeProject.TestCases.UserFlow
             Pages.CheckoutPage.ClickEqualityAddressesCheckBox();
             Pages.CheckoutPage.ClickAddNewAddressButton();
             Pages.AddressForm.CreateNewAddress(address, city, StatesDropdownConstants.Alabama, zipCode, CountriesDropdownConstants.UnitedStates, mobilePhone, addressAlias);
-            Pages.BasePage.ClickDropdown(DropdownNamesConstants.AddressDeliveryDropdown);
-            Pages.CheckoutPage.ClickAddressFromDropdown(DropdownNamesConstants.AddressDeliveryDropdown, addressAlias);
+            Pages.BasePage.ClickDropdown(DropdownNamesConstants.DeliveryAddressDropdown);
+            Pages.CheckoutPage.ClickAddressFromDropdown(DropdownNamesConstants.DeliveryAddressDropdown, addressAlias);
             Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
             Pages.CheckoutPage.ClickTermsOfServiceAgreementCheckBox();
             Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
             Pages.CheckoutPage.ClickPayByCheckButton();
             Pages.CheckoutPage.ClickIConfirmMyOrderButton();
             Assert.IsTrue(Pages.CheckoutPage.IsSuccessAlertDisplayed());
+
+            Pages.BasePage.ClickAccountButton();
+            Pages.MyAccountPage.ClickMyAddressesButton();
+            Pages.AddressesPage.DeleteLastAddress();
+        }
+
+        [Test]
+        public void CheckoutWithBillingAddressCreationOnCheckoutStep()
+        {
+            Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
+            Pages.MyAccountPage.ClickHomeButton();
+            Pages.HomePage.MoveToProductCard(1);
+            Pages.HomePage.ClickAddToCartButtonInCard(1);
+            Pages.HomePage.WaitUntilCartPopupIsDisplayed();
+            Pages.HomePage.ClickProceedToCheckoutButton();
+            Pages.CheckoutPage.ClickProceedToCheckoutButton();
+            Pages.CheckoutPage.ClickEqualityAddressesCheckBox();
+            Pages.CheckoutPage.ClickAddNewAddressButton();
+            Pages.AddressForm.CreateNewAddress(address, city, StatesDropdownConstants.Alabama, zipCode, CountriesDropdownConstants.UnitedStates, mobilePhone, addressAlias);
+            Pages.BasePage.ClickDropdown(DropdownNamesConstants.BillingAddressDropdown);
+            Pages.CheckoutPage.ClickAddressFromDropdown(DropdownNamesConstants.DeliveryAddressDropdown, addressAlias);
+            Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
+            Pages.CheckoutPage.ClickTermsOfServiceAgreementCheckBox();
+            Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
+            Pages.CheckoutPage.ClickPayByCheckButton();
+            Pages.CheckoutPage.ClickIConfirmMyOrderButton();
+            Assert.IsTrue(Pages.CheckoutPage.IsSuccessAlertDisplayed());
+
+            Pages.BasePage.ClickAccountButton();
+            Pages.MyAccountPage.ClickMyAddressesButton();
+            Pages.AddressesPage.DeleteLastAddress();
         }
     }
 }
