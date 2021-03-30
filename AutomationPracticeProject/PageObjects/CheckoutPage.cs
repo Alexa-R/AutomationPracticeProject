@@ -14,6 +14,8 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement IConfirmMyOrderButton => new WrapperWebElement(By.XPath("//*[@id='cart_navigation']//*[@type='submit']"));
         private WrapperWebElement OrderConfirmationTitle => new WrapperWebElement(By.XPath("//*[@class='cheque-indent']"));
         private WrapperWebElement SuccessAlert => new WrapperWebElement(By.XPath("//*[@class='alert alert-success']"));
+        private WrapperWebElement AddNewAddressButton => new WrapperWebElement(By.XPath("//*[@title='Add']"));
+        private WrapperWebElement EqualityAddressesCheckBox => new WrapperWebElement(By.XPath("//*[@id='uniform-addressesAreEquals']"));
 
         public void ClickProceedToCheckoutButton()
         {
@@ -61,6 +63,24 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info("Checking the display of the SuccessAlert");
             return SuccessAlert.Displayed;
+        }
+
+        public void ClickAddNewAddressButton()
+        {
+            LogHelper.Info("Clicking on the Add New Address Button");
+            AddNewAddressButton.Click();
+        }
+
+        public void ClickEqualityAddressesCheckBox()
+        {
+            LogHelper.Info("Clicking on the Equality Addresses CheckBox");
+            EqualityAddressesCheckBox.Click();
+        }
+
+        public void ClickAddressFromDropdown(string dropdownName, string addressName)
+        {
+            LogHelper.Info($"Clicking on the {addressName} from {dropdownName} Dropdown Menu");
+            new WrapperWebElement(By.XPath($"//*[@id='id_{dropdownName}']//*[contains(text(),'{addressName}')]")).Click();
         }
     }
 }
