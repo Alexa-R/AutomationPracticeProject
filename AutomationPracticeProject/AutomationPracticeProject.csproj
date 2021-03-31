@@ -527,6 +527,7 @@
     <Compile Include="TestCases\PDP\AddProduct.cs" />
     <Compile Include="TestCases\PDP\PdpDisplay.cs" />
     <Compile Include="TestCases\PDP\Reviews.cs" />
+    <Compile Include="TestCases\Search\SearchResultPopup.cs" />
     <Compile Include="TestCases\UserFlow\Checkout.cs" />
     <Compile Include="WrapperElement\WrapperWebElement.cs" />
     <Compile Include="WrapperFactory\WebDriverFactory.cs" />
@@ -549,7 +550,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TestCases\PLP\" />
-    <Folder Include="TestCases\Search\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Drivers\chromedriver.exe" />

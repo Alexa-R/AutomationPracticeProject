@@ -92,7 +92,13 @@ namespace AutomationPracticeProject.PageObjects
             LogHelper.Info("Clicking on the WishList Delete Button");
             new WrapperWebElement(By.XPath($"//*[@class='ac_results']//li[{resultItemIndex}]")).Click();
         }
-        
+
+        public string GetItemFromSearchResultPopupText(int resultItemIndex)
+        {
+            LogHelper.Info("Getting the Result Popup Text");
+            return new WrapperWebElement(By.XPath($"//*[@class='ac_results']//li[{resultItemIndex}]")).Text;
+        }
+
         public void EnterItemInSearchInputField(string itemName)
         {
             LogHelper.Info($"Searching for '{itemName}' in search input field");
