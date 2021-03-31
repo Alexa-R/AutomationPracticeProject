@@ -34,5 +34,7 @@
         public static OrderHistoryPage OrderHistoryPage => GetPage<OrderHistoryPage>();
 
         public static ProductPage ProductPage => GetPage<ProductPage>();
+
+        public static ProductCartPopup ProductCartPopup => GetPage<ProductCartPopup>();
     }
 }

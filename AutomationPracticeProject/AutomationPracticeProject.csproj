@@ -507,6 +507,7 @@
     <Compile Include="PageObjects\MyWishListsPage.cs" />
     <Compile Include="PageObjects\OrderHistoryPage.cs" />
     <Compile Include="PageObjects\Pages.cs" />
+    <Compile Include="PageObjects\ProductCartPopup.cs" />
     <Compile Include="PageObjects\ProductPage.cs" />
     <Compile Include="PageObjects\PersonalInformationForm.cs" />
     <Compile Include="PageObjects\RegistrationForm.cs" />

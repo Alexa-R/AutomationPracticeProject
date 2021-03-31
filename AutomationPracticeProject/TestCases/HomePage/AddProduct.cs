@@ -9,9 +9,11 @@ namespace AutomationPracticeProject.TestCases.HomePage
         public void AbilityToAddProduct()
         {
             Pages.HomePage.MoveToProductCard(1);
+            var productTitle = Pages.HomePage.GetProductTitle(1);
             Pages.HomePage.ClickAddToCartButtonInCard(1);
             Pages.HomePage.WaitUntilCartPopupIsDisplayed();
-            Pages.HomePage.ClickProceedToCheckoutButton();
+            Pages.ProductCartPopup.ClickProceedToCheckoutButton();
+            Assert.Equals(productTitle, Pages.CheckoutPage.GetLastProductTitleText());
         }
     }
 }

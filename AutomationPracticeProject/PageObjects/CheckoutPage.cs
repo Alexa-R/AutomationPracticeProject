@@ -18,6 +18,7 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement SuccessAlert => new WrapperWebElement(By.XPath("//*[@class='alert alert-success']"));
         private WrapperWebElement AddNewAddressButton => new WrapperWebElement(By.XPath("//*[@title='Add']"));
         private WrapperWebElement EqualityAddressesCheckBox => new WrapperWebElement(By.XPath("//*[@id='uniform-addressesAreEquals']"));
+        private WrapperWebElement LastProductTitle => new WrapperWebElement(By.XPath("//*[contains(@class,'last_item')]//*[@class='product-name']"));
 
         public void ClickProceedToCheckoutButton()
         {
@@ -87,11 +88,18 @@ namespace AutomationPracticeProject.PageObjects
 
         public string GetOrderReference()
         {
+            LogHelper.Info("Getting the Order Reference");
             var orderConfirmationText = OrderConfirmationBox.Text;
             var startWith = "reference";
             var substring = orderConfirmationText.Substring(orderConfirmationText.IndexOf(startWith, StringComparison.Ordinal)+1);
             var orderConfirmationArray = substring.Trim().Split(new char[] { ' ', '.', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             return orderConfirmationArray[1];
+        }
+
+        public string GetLastProductTitleText()
+        {
+            LogHelper.Info("Getting the Last Product Title");
+            return LastProductTitle.Text;
         }
     }
 }

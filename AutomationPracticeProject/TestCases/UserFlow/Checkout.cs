@@ -22,7 +22,7 @@ namespace AutomationPracticeProject.TestCases.UserFlow
             Pages.HomePage.MoveToProductCard(1);
             Pages.HomePage.ClickAddToCartButtonInCard(1);
             Pages.HomePage.WaitUntilCartPopupIsDisplayed();
-            Pages.HomePage.ClickProceedToCheckoutButton();
+            Pages.ProductCartPopup.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
             Pages.CheckoutPage.ClickTermsOfServiceAgreementCheckBox();
@@ -40,7 +40,7 @@ namespace AutomationPracticeProject.TestCases.UserFlow
             Pages.HomePage.MoveToProductCard(1);
             Pages.HomePage.ClickAddToCartButtonInCard(1);
             Pages.HomePage.WaitUntilCartPopupIsDisplayed();
-            Pages.HomePage.ClickProceedToCheckoutButton();
+            Pages.ProductCartPopup.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
             Pages.CheckoutPage.ClickTermsOfServiceAgreementCheckBox();
@@ -58,7 +58,7 @@ namespace AutomationPracticeProject.TestCases.UserFlow
             Pages.HomePage.MoveToProductCard(1);
             Pages.HomePage.ClickAddToCartButtonInCard(1);
             Pages.HomePage.WaitUntilCartPopupIsDisplayed();
-            Pages.HomePage.ClickProceedToCheckoutButton();
+            Pages.ProductCartPopup.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickEqualityAddressesCheckBox();
             Pages.CheckoutPage.ClickAddNewAddressButton();
@@ -85,7 +85,7 @@ namespace AutomationPracticeProject.TestCases.UserFlow
             Pages.HomePage.MoveToProductCard(1);
             Pages.HomePage.ClickAddToCartButtonInCard(1);
             Pages.HomePage.WaitUntilCartPopupIsDisplayed();
-            Pages.HomePage.ClickProceedToCheckoutButton();
+            Pages.ProductCartPopup.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickEqualityAddressesCheckBox();
             Pages.CheckoutPage.ClickAddNewAddressButton();

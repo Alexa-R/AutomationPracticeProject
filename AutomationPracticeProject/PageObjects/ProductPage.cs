@@ -13,6 +13,7 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement ProductQuantityInputField => new WrapperWebElement(By.XPath("//*[@id='quantity_wanted']"));
         private WrapperWebElement ProductSizeDropdown => new WrapperWebElement(By.XPath("//*[@id='uniform-group_1']"));
         private WrapperWebElement ProductColorList => new WrapperWebElement(By.XPath("//*[@id='color_to_pick_list']"));
+        private WrapperWebElement AddToCartButton => new WrapperWebElement(By.XPath("//*[@id='add_to_cart']"));
 
         public bool IsMainProductImageDisplayed()
         {
@@ -54,6 +55,18 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info("Checking the display of the Product Color List");
             return ProductColorList.Displayed;
+        }
+
+        public void ClickAddToCartButton()
+        {
+            LogHelper.Info("Clicking on the Add To Cart Button");
+            AddToCartButton.Click();
+        }
+
+        public string GetProductTitleText()
+        {
+            LogHelper.Info("Getting the Product Title Text");
+            return ProductTitle.Text;
         }
     }
 }

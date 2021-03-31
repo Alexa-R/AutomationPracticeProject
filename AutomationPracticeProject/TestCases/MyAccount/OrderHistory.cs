@@ -14,7 +14,7 @@ namespace AutomationPracticeProject.TestCases.MyAccount
             Pages.HomePage.MoveToProductCard(1);
             Pages.HomePage.ClickAddToCartButtonInCard(1);
             Pages.HomePage.WaitUntilCartPopupIsDisplayed();
-            Pages.HomePage.ClickProceedToCheckoutButton();
+            Pages.ProductCartPopup.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
             Pages.CheckoutPage.ClickTermsOfServiceAgreementCheckBox();
