@@ -32,5 +32,7 @@
         public static CheckoutPage CheckoutPage => GetPage<CheckoutPage>();
 
         public static OrderHistoryPage OrderHistoryPage => GetPage<OrderHistoryPage>();
+
+        public static ProductPage ProductPage => GetPage<ProductPage>();
     }
 }

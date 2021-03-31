@@ -507,6 +507,7 @@
     <Compile Include="PageObjects\MyWishListsPage.cs" />
     <Compile Include="PageObjects\OrderHistoryPage.cs" />
     <Compile Include="PageObjects\Pages.cs" />
+    <Compile Include="PageObjects\ProductPage.cs" />
     <Compile Include="PageObjects\PersonalInformationForm.cs" />
     <Compile Include="PageObjects\RegistrationForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -520,6 +521,9 @@
     <Compile Include="TestCases\MyAccount\MyWishLists.cs" />
     <Compile Include="TestCases\MyAccount\OrderHistory.cs" />
     <Compile Include="TestCases\MyAccount\PersonalInformation.cs" />
+    <Compile Include="TestCases\PDP\AddProduct.cs" />
+    <Compile Include="TestCases\PDP\PdpDisplay.cs" />
+    <Compile Include="TestCases\PDP\Reviews.cs" />
     <Compile Include="TestCases\UserFlow\Checkout.cs" />
     <Compile Include="WrapperElement\WrapperWebElement.cs" />
     <Compile Include="WrapperFactory\WebDriverFactory.cs" />
@@ -542,7 +546,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TestCases\Cart\" />
-    <Folder Include="TestCases\PDP\" />
     <Folder Include="TestCases\PLP\" />
     <Folder Include="TestCases\Search\" />
   </ItemGroup>
