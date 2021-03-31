@@ -517,6 +517,7 @@
     <Compile Include="TestCases\Authentication\Login.cs" />
     <Compile Include="TestCases\BaseSuite.cs" />
     <Compile Include="TestCases\BaseTest.cs" />
+    <Compile Include="TestCases\Cart\CartModifications.cs" />
     <Compile Include="TestCases\ContactPage\SendMessage.cs" />
     <Compile Include="TestCases\HomePage\AddProduct.cs" />
     <Compile Include="TestCases\MyAccount\MyAddresses.cs" />
@@ -547,7 +548,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="TestCases\Cart\" />
     <Folder Include="TestCases\PLP\" />
     <Folder Include="TestCases\Search\" />
   </ItemGroup>

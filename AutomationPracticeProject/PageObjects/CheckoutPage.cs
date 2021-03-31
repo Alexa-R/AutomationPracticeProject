@@ -19,6 +19,7 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement AddNewAddressButton => new WrapperWebElement(By.XPath("//*[@title='Add']"));
         private WrapperWebElement EqualityAddressesCheckBox => new WrapperWebElement(By.XPath("//*[@id='uniform-addressesAreEquals']"));
         private WrapperWebElement LastProductTitle => new WrapperWebElement(By.XPath("//*[contains(@class,'last_item')]//*[@class='product-name']"));
+        private WrapperWebElement LastProductTrashButton => new WrapperWebElement(By.XPath("//*[contains(@class,'last_item')]//*[@class='cart_quantity_delete']"));
 
         public void ClickProceedToCheckoutButton()
         {
@@ -100,6 +101,12 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info("Getting the Last Product Title");
             return LastProductTitle.Text;
+        }
+
+        public void ClickLastProductTrashButton()
+        {
+            LogHelper.Info("Clicking on the Last Product Trash Button");
+            LastProductTrashButton.Click();
         }
     }
 }
