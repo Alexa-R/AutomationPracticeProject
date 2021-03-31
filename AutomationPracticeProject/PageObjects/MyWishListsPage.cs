@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace AutomationPracticeProject.PageObjects
 {
-    public class MyWishListsPage
+    public class MyWishListsPage : BasePage
     {
         private WrapperWebElement NameInputField => new WrapperWebElement(By.XPath("//*[@id='name']"));
         private WrapperWebElement SaveButton => new WrapperWebElement(By.XPath("//*[@id='submitWishlist']"));

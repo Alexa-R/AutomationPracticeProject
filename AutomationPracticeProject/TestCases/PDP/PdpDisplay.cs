@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using AutomationPracticeProject.PageObjects;
+﻿using AutomationPracticeProject.PageObjects;
 using NUnit.Framework;
 
 namespace AutomationPracticeProject.TestCases.PDP

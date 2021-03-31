@@ -5,7 +5,7 @@ using OpenQA.Selenium;
 
 namespace AutomationPracticeProject.PageObjects
 {
-    public class CheckoutPage
+    public class CheckoutPage : BasePage
     {
         private WrapperWebElement ProceedToCheckoutButton => new WrapperWebElement(By.XPath("//*[@class='cart_navigation clearfix']//*[@title='Proceed to checkout']"));
         private WrapperWebElement SubmitAddressProceedToCheckoutButton => new WrapperWebElement(By.XPath("//*[@class='cart_navigation clearfix']//*[@type='submit']"));

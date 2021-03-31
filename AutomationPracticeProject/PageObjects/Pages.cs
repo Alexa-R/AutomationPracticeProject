@@ -36,5 +36,7 @@
         public static ProductPage ProductPage => GetPage<ProductPage>();
 
         public static ProductCartPopup ProductCartPopup => GetPage<ProductCartPopup>();
+
+        public static ReviewPopup ReviewPopup => GetPage<ReviewPopup>();
     }
 }

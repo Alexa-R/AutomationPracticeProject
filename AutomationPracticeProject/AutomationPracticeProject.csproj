@@ -511,6 +511,7 @@
     <Compile Include="PageObjects\ProductPage.cs" />
     <Compile Include="PageObjects\PersonalInformationForm.cs" />
     <Compile Include="PageObjects\RegistrationForm.cs" />
+    <Compile Include="PageObjects\ReviewPopup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCases\AccountManagement\Logout.cs" />
     <Compile Include="TestCases\Authentication\Login.cs" />
