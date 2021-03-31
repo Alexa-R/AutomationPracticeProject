@@ -104,5 +104,10 @@ namespace AutomationPracticeProject.PageObjects
             LogHelper.Info($"Searching for '{itemName}' in search input field");
             SearchInputField.SendKeys(itemName);
         }
+
+        public void KeyEnter()
+        {
+            SearchInputField.SendKeys(Keys.Enter);
+        }
     }
 }

@@ -512,6 +512,7 @@
     <Compile Include="PageObjects\PersonalInformationForm.cs" />
     <Compile Include="PageObjects\RegistrationForm.cs" />
     <Compile Include="PageObjects\ReviewPopup.cs" />
+    <Compile Include="PageObjects\SearchResultPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCases\AccountManagement\Logout.cs" />
     <Compile Include="TestCases\Authentication\Login.cs" />
@@ -527,6 +528,7 @@
     <Compile Include="TestCases\PDP\AddProduct.cs" />
     <Compile Include="TestCases\PDP\PdpDisplay.cs" />
     <Compile Include="TestCases\PDP\Reviews.cs" />
+    <Compile Include="TestCases\Search\Plp.cs" />
     <Compile Include="TestCases\Search\SearchResultPopup.cs" />
     <Compile Include="TestCases\UserFlow\Checkout.cs" />
     <Compile Include="WrapperElement\WrapperWebElement.cs" />

@@ -38,5 +38,7 @@
         public static ProductCartPopup ProductCartPopup => GetPage<ProductCartPopup>();
 
         public static ReviewPopup ReviewPopup => GetPage<ReviewPopup>();
+
+        public static SearchResultPage SearchResultPage => GetPage<SearchResultPage>();
     }
 }
