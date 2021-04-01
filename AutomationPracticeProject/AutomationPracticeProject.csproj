@@ -489,6 +489,7 @@
   <ItemGroup>
     <Compile Include="Constants\CountriesDropdownConstants.cs" />
     <Compile Include="Constants\DropdownNamesConstants.cs" />
+    <Compile Include="Constants\ProductCategoryNamesConstants.cs" />
     <Compile Include="Constants\StatesDropdownConstants.cs" />
     <Compile Include="Constants\SubjectHeadingDropdownConstants.cs" />
     <Compile Include="Helpers\ExtentReportsHelper.cs" />
@@ -528,6 +529,7 @@
     <Compile Include="TestCases\PDP\AddProduct.cs" />
     <Compile Include="TestCases\PDP\PdpDisplay.cs" />
     <Compile Include="TestCases\PDP\Reviews.cs" />
+    <Compile Include="TestCases\PLP\AddProduct.cs" />
     <Compile Include="TestCases\Search\Plp.cs" />
     <Compile Include="TestCases\Search\SearchResultPopup.cs" />
     <Compile Include="TestCases\UserFlow\Checkout.cs" />
@@ -550,9 +552,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TestCases\PLP\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Drivers\chromedriver.exe" />
   </ItemGroup>

@@ -13,7 +13,6 @@ namespace AutomationPracticeProject.TestCases.MyAccount
             Pages.MyAccountPage.ClickHomeButton();
             Pages.HomePage.MoveToProductCard(1);
             Pages.HomePage.ClickAddToCartButtonInCard(1);
-            Pages.HomePage.WaitUntilCartPopupIsDisplayed();
             Pages.ProductCartPopup.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();

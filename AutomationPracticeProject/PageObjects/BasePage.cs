@@ -109,5 +109,11 @@ namespace AutomationPracticeProject.PageObjects
         {
             SearchInputField.SendKeys(Keys.Enter);
         }
+
+        public void ClickProductCategoryButton(string categoryName)
+        {
+            LogHelper.Info($"Clicking on the {categoryName} category button");
+            new WrapperWebElement(By.XPath($"//*[contains(@class,'sf-menu')]/li/*[@title='{categoryName}']")).Click();
+        }
     }
 }

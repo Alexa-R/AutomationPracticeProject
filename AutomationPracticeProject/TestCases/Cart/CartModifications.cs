@@ -14,9 +14,9 @@ namespace AutomationPracticeProject.TestCases.Cart
             Pages.HomePage.MoveToProductCard(1);
             var productTitle = Pages.HomePage.GetProductTitle(1);
             Pages.HomePage.ClickAddToCartButtonInCard(1);
-            Pages.HomePage.WaitUntilCartPopupIsDisplayed();
             Pages.ProductCartPopup.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickLastProductTrashButton();
+            
             Assert.AreNotEqual(productTitle, Pages.CheckoutPage.GetLastProductTitleText());
         }
     }

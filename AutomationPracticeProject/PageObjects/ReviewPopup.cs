@@ -9,7 +9,7 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement ReviewTitleInputField => new WrapperWebElement(By.XPath("//*[@id='comment_title']"));
         private WrapperWebElement ReviewCommentInputField => new WrapperWebElement(By.XPath("//*[@id='content']"));
         private WrapperWebElement SendButton => new WrapperWebElement(By.XPath("//*[@id='submitNewMessage']"));
-        private WrapperWebElement ResultPopup => new WrapperWebElement(By.XPath("//*[contains(@class,'fancybox-opened')]"));
+        private WrapperWebElement ResultPopup => new WrapperWebElement(By.XPath("//*[contains(@class,'fancybox-type-html')]"));
 
         public void EnterReviewTitle(string reviewTitle)
         {
@@ -22,7 +22,7 @@ namespace AutomationPracticeProject.PageObjects
             LogHelper.Info($"Entering of the Review Comment '{reviewComment}'");
             ReviewCommentInputField.SendKeys(reviewComment);
         }
-
+       
         public void ClickSendButton()
         {
             LogHelper.Info("Clicking on the Send Button");
@@ -33,6 +33,12 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info("Getting the Result Popup Text");
             return ResultPopup.Text;
+        }
+
+        public void WaitUntilResultPopupIsDisplayed()
+        {
+            LogHelper.Info("Waiting for Result Popup is display");
+            ResultPopup.WaitForElementIsDisplayed(3000);
         }
     }
 }

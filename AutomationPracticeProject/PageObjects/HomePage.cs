@@ -6,8 +6,6 @@ namespace AutomationPracticeProject.PageObjects
 {
     public class HomePage : BasePage
     {
-        private WrapperWebElement CartPopup => new WrapperWebElement(By.XPath("//*[@id='layer_cart']"));
-
         public void MoveToProductCard(int productCardIndex)
         {
             LogHelper.Info($"Moving to {productCardIndex} product card");
@@ -24,12 +22,6 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info($"Getting the Product Title of the {productCardIndex} product card");
             return new WrapperWebElement(By.XPath($"//*[@id='homefeatured']//*[@class='product-container'][.//*[@data-id-product={productCardIndex}]]//*[@class='product-name']")).Text;
-        }
-
-        public void WaitUntilCartPopupIsDisplayed()
-        {
-            LogHelper.Info("Waiting for Cart Popup is display");
-            CartPopup.WaitForElementIsDisplayed();
         }
     }
 }
