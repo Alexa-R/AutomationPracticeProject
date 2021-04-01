@@ -16,5 +16,17 @@ namespace AutomationPracticeProject.TestCases.PLP
             Pages.ProductCartPopup.ClickProceedToCheckoutButton();
             Assert.AreEqual(productTitle, Pages.CheckoutPage.GetLastProductTitleText());
         }
+
+        [Test]
+        public void AddProductToCartFromSearchPlp()
+        {
+            Pages.BasePage.EnterItemInSearchInputField("Printed Dress");
+            Pages.BasePage.KeyEnter();
+            var productTitle = Pages.SearchResultPage.GetFirstItemTitleText();
+            Pages.SearchResultPage.MoveToFirstItemCard();
+            Pages.SearchResultPage.ClickFirstItemAddToCartButton();
+            Pages.ProductCartPopup.ClickProceedToCheckoutButton();
+            Assert.AreEqual(productTitle, Pages.CheckoutPage.GetLastProductTitleText());
+        }
     }
 }
