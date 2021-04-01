@@ -5,7 +5,7 @@ namespace AutomationPracticeProject.TestCases.PDP
 {
     public class PdpDisplay : BaseTest
     {
-        [Test]
+        [Test, Category("PriorityB")]
         public void PdpDisplayIsCorrect()
         {
             Pages.BasePage.EnterItemInSearchInputField("Printed Dress");

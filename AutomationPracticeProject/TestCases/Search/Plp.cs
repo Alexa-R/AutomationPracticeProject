@@ -5,7 +5,7 @@ namespace AutomationPracticeProject.TestCases.Search
 {
     public class Plp : BaseTest
     {
-        [Test]
+        [Test, Category("PriorityA")]
         public void ProductsAreDisplayedOnPageAccordingToSearch()
         {
             var searchString = "Faded Short Sleeve T-shirts";

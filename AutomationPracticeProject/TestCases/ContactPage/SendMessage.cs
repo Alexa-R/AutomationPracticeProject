@@ -7,7 +7,7 @@ namespace AutomationPracticeProject.TestCases.ContactPage
 {
     public class SendMessage : BaseTest
     {
-        [Test]
+        [Test, Category("PriorityC")]
         public void AbilityToSendMessage()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);

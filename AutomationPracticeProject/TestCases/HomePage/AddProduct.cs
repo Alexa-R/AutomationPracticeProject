@@ -5,7 +5,7 @@ namespace AutomationPracticeProject.TestCases.HomePage
 {
     public class AddProduct : BaseTest
     {
-        [Test]
+        [Test, Category("PriorityA")]
         public void AddProductToCartFromHomePage()
         {
             Pages.HomePage.MoveToProductCard(1);

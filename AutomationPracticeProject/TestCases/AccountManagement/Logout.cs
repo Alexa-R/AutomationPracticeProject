@@ -6,7 +6,7 @@ namespace AutomationPracticeProject.TestCases.AccountManagement
 {
     public class Logout : BaseTest 
     {
-        [Test]
+        [Test, Category("PriorityA")]
         public void AbilityToLogout()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);

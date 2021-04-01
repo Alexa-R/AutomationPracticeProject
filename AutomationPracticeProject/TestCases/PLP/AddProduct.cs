@@ -6,7 +6,7 @@ namespace AutomationPracticeProject.TestCases.PLP
 {
     public class AddProduct : BaseTest
     {
-        [Test]
+        [Test, Category("PriorityA")]
         public void AddProductToCartFromCategoryPlp()
         {
             Pages.BasePage.ClickProductCategoryButton(ProductCategoryNamesConstants.Women);
@@ -17,7 +17,7 @@ namespace AutomationPracticeProject.TestCases.PLP
             Assert.AreEqual(productTitle, Pages.CheckoutPage.GetLastProductTitleText());
         }
 
-        [Test]
+        [Test, Category("PriorityA")]
         public void AddProductToCartFromSearchPlp()
         {
             Pages.BasePage.EnterItemInSearchInputField("Printed Dress");

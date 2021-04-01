@@ -7,7 +7,7 @@ namespace AutomationPracticeProject.TestCases.MyAccount
 {
     public class PersonalInformation : BaseTest
     {
-        [Test]
+        [Test, Category("PriorityC")]
         public void ChangeUserPersonalInformation()
         {
             var lastName = $"LastName{RandomHelper.GetRandomString(8)}";
