@@ -282,6 +282,9 @@
     <Reference Include="RazorEngine.NetCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
       <HintPath>..\packages\RazorEngine.NetCore.2.2.6\lib\net461\RazorEngine.NetCore.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="SharpCompress, Version=0.23.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpCompress.0.23.0\lib\net45\SharpCompress.dll</HintPath>
     </Reference>
@@ -487,11 +490,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiTestCases\Authentication\Login.cs" />
+    <Compile Include="ApiTestCases\EndPoints.cs" />
+    <Compile Include="ApiTestCases\MyAccount\MyAddresses.cs" />
     <Compile Include="Constants\CountriesDropdownConstants.cs" />
     <Compile Include="Constants\DropdownNamesConstants.cs" />
     <Compile Include="Constants\ProductCategoryNamesConstants.cs" />
     <Compile Include="Constants\StatesDropdownConstants.cs" />
     <Compile Include="Constants\SubjectHeadingDropdownConstants.cs" />
+    <Compile Include="Helpers\ApiHelper.cs" />
     <Compile Include="Helpers\ExtentReportsHelper.cs" />
     <Compile Include="Helpers\GMailHelper.cs" />
     <Compile Include="Helpers\LogHelper.cs" />
@@ -530,6 +537,7 @@
     <Compile Include="TestCases\PDP\PdpDisplay.cs" />
     <Compile Include="TestCases\PDP\Reviews.cs" />
     <Compile Include="TestCases\PLP\AddProduct.cs" />
+    <Compile Include="TestCases\PLP\FilteringRule.cs" />
     <Compile Include="TestCases\Search\Plp.cs" />
     <Compile Include="TestCases\Search\SearchResultPopup.cs" />
     <Compile Include="TestCases\UserFlow\Checkout.cs" />

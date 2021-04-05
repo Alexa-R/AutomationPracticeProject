@@ -14,7 +14,7 @@ namespace AutomationPracticeProject.TestCases.UserFlow
         private string mobilePhone = $"{RandomHelper.GetRandomNumbers(8)}";
         private string addressAlias = $"AddressAlias{RandomHelper.GetRandomString(8)}";
 
-        [Test, Category("PriorityA")]
+        [Test, Category("Priority_High")]
         public void CheckoutUsingBankWire()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
@@ -31,7 +31,7 @@ namespace AutomationPracticeProject.TestCases.UserFlow
             Assert.That(Pages.CheckoutPage.GetOrderConfirmationTitleText(), Contains.Substring("is complete"));
         }
 
-        [Test, Category("PriorityA")]
+        [Test, Category("Priority_High")]
         public void CheckoutUsingCheck()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
@@ -48,7 +48,7 @@ namespace AutomationPracticeProject.TestCases.UserFlow
             Assert.IsTrue(Pages.CheckoutPage.IsSuccessAlertDisplayed());
         }
 
-        [Test, Category("PriorityB")]
+        [Test, Category("Priority_Medium")]
         public void CheckoutWithDeliveryAddressCreationOnCheckoutStep()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
@@ -74,7 +74,7 @@ namespace AutomationPracticeProject.TestCases.UserFlow
             Pages.AddressesPage.DeleteLastAddress();
         }
 
-        [Test, Category("PriorityB")]
+        [Test, Category("Priority_Medium")]
         public void CheckoutWithBillingAddressCreationOnCheckoutStep()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);

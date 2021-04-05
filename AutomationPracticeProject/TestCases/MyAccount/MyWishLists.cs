@@ -9,7 +9,7 @@ namespace AutomationPracticeProject.TestCases.MyAccount
     {
         private string wishListName = $"WishListName{RandomHelper.GetRandomString(8)}";
 
-        [Test, Category("PriorityB")]
+        [Test, Category("Priority_Medium")]
         public void AddNewWishList()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
@@ -20,7 +20,7 @@ namespace AutomationPracticeProject.TestCases.MyAccount
             Pages.MyWishListsPage.DeleteWishList(wishListName);
         }
 
-        [Test, Category("PriorityC")]
+        [Test, Category("Priority_Medium")]
         public void DeleteWishList()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);

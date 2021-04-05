@@ -6,7 +6,7 @@ namespace AutomationPracticeProject.TestCases.MyAccount
 {
     public class OrderHistory : BaseTest
     {
-        [Test, Category("PriorityB")]
+        [Test, Category("Priority_High")]
         public void DisplayOfNewlyOrder()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);

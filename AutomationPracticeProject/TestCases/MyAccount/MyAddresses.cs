@@ -14,7 +14,7 @@ namespace AutomationPracticeProject.TestCases.MyAccount
         private string mobilePhone = $"{RandomHelper.GetRandomNumbers(8)}";
         private string addressAlias = $"AddressAlias{RandomHelper.GetRandomString(8)}";
 
-        [Test, Category("PriorityA")]
+        [Test, Category("Priority_High")]
         public void AddNewAddress()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
@@ -26,7 +26,7 @@ namespace AutomationPracticeProject.TestCases.MyAccount
             Pages.AddressesPage.DeleteLastAddress();
         }
 
-        [Test, Category("PriorityB")]
+        [Test, Category("Priority_Medium")]
         public void EditAddress()
         {
             var updateCity = $"UpdateCity{RandomHelper.GetRandomString(8)}";
@@ -43,7 +43,7 @@ namespace AutomationPracticeProject.TestCases.MyAccount
             Pages.AddressesPage.DeleteLastAddress();
         }
 
-        [Test, Category("PriorityC")]
+        [Test, Category("Priority_Medium")]
         public void DeleteAddress()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
