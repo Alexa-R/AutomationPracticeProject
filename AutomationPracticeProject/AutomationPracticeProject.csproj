@@ -491,8 +491,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiTestCases\Authentication\Login.cs" />
+    <Compile Include="ApiTestCases\BaseApiTest.cs" />
     <Compile Include="ApiTestCases\EndPoints.cs" />
     <Compile Include="ApiTestCases\MyAccount\MyAddresses.cs" />
+    <Compile Include="Constants\ContentTypeConstants.cs" />
     <Compile Include="Constants\CountriesDropdownConstants.cs" />
     <Compile Include="Constants\DropdownNamesConstants.cs" />
     <Compile Include="Constants\ProductCategoryNamesConstants.cs" />

@@ -8,11 +8,8 @@ using NUnit.Framework;
 
 namespace AutomationPracticeProject.ApiTestCases.Authentication
 {
-    public class Login
+    public class Login : BaseApiTest
     {
-        private HttpClient _client = new HttpClient();
-        private string _contentType = "application/x-www-form-urlencoded";
-
         [Test, Category("Priority_High")]
         public void LoginWithValidCredentials()
         {
@@ -26,7 +23,7 @@ namespace AutomationPracticeProject.ApiTestCases.Authentication
                 }
             );
             
-            var response = ApiHelper.SendPostRequest(_client, EndPoints.BasePath, loginData, _contentType);
+            var response = ApiHelper.SendPostRequest(_client, EndPoints.BasePath, loginData, ContentTypeConstants.FormUrlencoded);
             Console.WriteLine(response.Result.Content.ReadAsStringAsync().Result);
         }
 
@@ -64,7 +61,7 @@ namespace AutomationPracticeProject.ApiTestCases.Authentication
                 }
             );
 
-            var response = ApiHelper.SendPostRequest(_client, EndPoints.BasePath, registrationData, _contentType);
+            var response = ApiHelper.SendPostRequest(_client, EndPoints.BasePath, registrationData, ContentTypeConstants.FormUrlencoded);
             Console.WriteLine(response.Result.Content.ReadAsStringAsync().Result);
         }
     }
