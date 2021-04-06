@@ -18,5 +18,8 @@ namespace AutomationPracticeProject.Helpers
 
         public static string GetRandomStringWithNumbers(int length) =>
             new string(Enumerable.Repeat(LettersWithNumbersPattern, length).Select(s => s[Random.Next(s.Length)]).ToArray());
+
+        public static int GetRandomNumbers(int minValue, int maxValue) =>
+            Random.Next(minValue, maxValue);
     }
 }
