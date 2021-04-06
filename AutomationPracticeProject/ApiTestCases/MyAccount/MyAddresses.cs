@@ -28,7 +28,7 @@ namespace AutomationPracticeProject.ApiTestCases.MyAccount
                 Domain = "automationpractice.com"
             };
 
-            cookies.Add(new Uri("http://automationpractice.com/index.php"), cookie);
+            cookies.Add(cookie);
             var handler = new HttpClientHandler
             {
                 CookieContainer = cookies

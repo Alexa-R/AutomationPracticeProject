@@ -494,6 +494,7 @@
     <Compile Include="ApiTestCases\BaseApiTest.cs" />
     <Compile Include="ApiTestCases\EndPoints.cs" />
     <Compile Include="ApiTestCases\MyAccount\MyAddresses.cs" />
+    <Compile Include="ApiTestCases\MyAccount\MyWishLists.cs" />
     <Compile Include="ApiTestCases\Search\Plp.cs" />
     <Compile Include="Constants\ContentTypeConstants.cs" />
     <Compile Include="Constants\CountriesDropdownConstants.cs" />
