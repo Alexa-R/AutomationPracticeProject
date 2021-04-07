@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Net.Http;
 using AutomationPracticeProject.Constants;
 using AutomationPracticeProject.Helpers;
+using AutomationPracticeProject.PageObjects;
+using AutomationPracticeProject.TestCases;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace AutomationPracticeProject.ApiTestCases.Authentication
 {
-    public class Login : BaseApiTest
+    public class Login : BaseTest
     {
         [Test, Category("Priority_High")]
         public void LoginWithValidCredentials()
@@ -23,8 +25,7 @@ namespace AutomationPracticeProject.ApiTestCases.Authentication
                 }
             );
             
-            var response = ApiHelper.SendPostRequest(_client, EndPoints.BasePath, loginData, ContentTypeConstants.FormUrlencoded);
-            Console.WriteLine(response.Result.Content.ReadAsStringAsync().Result);
+            ApiHelper.SendPostRequest(_client, EndPoints.BasePath, loginData, ContentTypeConstants.FormUrlencoded);
         }
 
         [Test, Category("Priority_High")]
@@ -61,8 +62,11 @@ namespace AutomationPracticeProject.ApiTestCases.Authentication
                 }
             );
 
-            var response = ApiHelper.SendPostRequest(_client, EndPoints.BasePath, registrationData, ContentTypeConstants.FormUrlencoded);
-            Console.WriteLine(response.Result.Content.ReadAsStringAsync().Result);
+            ApiHelper.SendPostRequest(_client, EndPoints.BasePath, registrationData, ContentTypeConstants.FormUrlencoded);
+            
+            Pages.BasePage.LogIn(registrationEmail, password);
+            Pages.BasePage.IsSignOutButtonDisplayed().Should().BeTrue();
+            Pages.BasePage.IsAccountButtonDisplayed().Should().BeTrue();
         }
     }
 }

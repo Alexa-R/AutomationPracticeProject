@@ -56,6 +56,9 @@
     <Reference Include="ExtentReports, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ExtentReports.4.1.0\lib\netstandard2.0\ExtentReports.dll</HintPath>
     </Reference>
+    <Reference Include="FluentAssertions, Version=5.10.3.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.5.10.3\lib\net47\FluentAssertions.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Apis, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.51.0\lib\net45\Google.Apis.dll</HintPath>
     </Reference>
@@ -491,7 +494,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiTestCases\Authentication\Login.cs" />
-    <Compile Include="ApiTestCases\BaseApiTest.cs" />
     <Compile Include="ApiTestCases\EndPoints.cs" />
     <Compile Include="ApiTestCases\MyAccount\MyAddresses.cs" />
     <Compile Include="ApiTestCases\MyAccount\MyWishLists.cs" />

@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Net.Http;
 using AutomationPracticeProject.Constants;
 using AutomationPracticeProject.Helpers;
+using AutomationPracticeProject.TestCases;
 using NUnit.Framework;
 
 namespace AutomationPracticeProject.ApiTestCases.MyAccount
 {
-    public class MyAddresses : BaseApiTest
+    public class MyAddresses : BaseTest
     {
         [Test, Category("Priority_High")]
         public void AddNewAddress()
@@ -45,8 +45,7 @@ namespace AutomationPracticeProject.ApiTestCases.MyAccount
                 }
             );
 
-            var response = ApiHelper.SendPostRequest(_client, EndPoints.BasePath, newAddressData, ContentTypeConstants.FormUrlencoded);
-            Console.WriteLine(response.Result.Content.ReadAsStringAsync().Result);
+            ApiHelper.SendPostRequest(_client, EndPoints.BasePath, newAddressData, ContentTypeConstants.FormUrlencoded);
         }
     }
 }

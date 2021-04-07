@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using AutomationPracticeProject.Constants;
 using AutomationPracticeProject.Helpers;
+using AutomationPracticeProject.TestCases;
 using NUnit.Framework;
 
 namespace AutomationPracticeProject.ApiTestCases.Search
 {
-    public class Plp : BaseApiTest
+    public class Plp : BaseTest
     {
         [Test, Category("Priority_High")]
         public void ProductsAreDisplayedOnPageAccordingToSearch()
@@ -23,8 +23,7 @@ namespace AutomationPracticeProject.ApiTestCases.Search
                     }
                 );
 
-            var response = ApiHelper.SendPostRequest(_client, EndPoints.BasePath, searchData, ContentTypeConstants.FormUrlencoded);
-            Console.WriteLine(response.Result.Content.ReadAsStringAsync().Result);
+            ApiHelper.SendPostRequest(_client, EndPoints.BasePath, searchData, ContentTypeConstants.FormUrlencoded);
         }
     }
 }

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using AutomationPracticeProject.Constants;
 using AutomationPracticeProject.Helpers;
+using AutomationPracticeProject.TestCases;
 using NUnit.Framework;
 
 namespace AutomationPracticeProject.ApiTestCases.MyAccount
 {
-    public class MyWishLists : BaseApiTest
+    public class MyWishLists : BaseTest
     {
         [Test, Category("Priority_Medium")]
         public void AddNewWishList()
@@ -34,8 +34,7 @@ namespace AutomationPracticeProject.ApiTestCases.MyAccount
                 }
             );
 
-            var response = ApiHelper.SendPostRequest(_client, EndPoints.BasePath, newWishListData, ContentTypeConstants.FormUrlencoded);
-            Console.WriteLine(response.Result.Content.ReadAsStringAsync().Result);
+            ApiHelper.SendPostRequest(_client, EndPoints.BasePath, newWishListData, ContentTypeConstants.FormUrlencoded);
         }
     }
 }
