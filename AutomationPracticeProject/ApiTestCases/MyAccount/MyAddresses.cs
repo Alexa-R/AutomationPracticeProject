@@ -3,7 +3,9 @@ using System.Configuration;
 using System.Net.Http;
 using AutomationPracticeProject.Constants;
 using AutomationPracticeProject.Helpers;
+using AutomationPracticeProject.PageObjects;
 using AutomationPracticeProject.TestCases;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace AutomationPracticeProject.ApiTestCases.MyAccount
@@ -46,6 +48,10 @@ namespace AutomationPracticeProject.ApiTestCases.MyAccount
             );
 
             ApiHelper.SendPostRequest(_client, EndPoints.BasePath, newAddressData, ContentTypeConstants.FormUrlencoded);
+
+            Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
+            Pages.MyAccountPage.ClickMyAddressesButton();
+            Pages.AddressesPage.GetLastAddressCardText().Should().Contain(addressAlias.ToUpper());
         }
     }
 }
