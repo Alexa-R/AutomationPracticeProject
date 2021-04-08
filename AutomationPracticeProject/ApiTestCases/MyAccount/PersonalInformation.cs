@@ -17,6 +17,7 @@ namespace AutomationPracticeProject.ApiTestCases.MyAccount
             var monthOfBirth = $"{RandomHelper.GetRandomNumbers(1, 12)}";
             var yearOfBirth = $"{RandomHelper.GetRandomNumbers(1900, 2021)}";
 
+            LogHelper.Info("Trying to change user personal information via API");
             var cookies = ApiHelper.GetAuthCookie(_client);
             var handler = new HttpClientHandler
             {

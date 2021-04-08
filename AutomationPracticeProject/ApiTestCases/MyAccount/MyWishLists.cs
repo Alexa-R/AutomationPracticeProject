@@ -17,6 +17,7 @@ namespace AutomationPracticeProject.ApiTestCases.MyAccount
         {
             var wishListName = $"WishListName{RandomHelper.GetRandomString(8)}";
 
+            LogHelper.Info("Trying to add wishlist via API");
             var cookies = ApiHelper.GetAuthCookie(_client);
             var handler = new HttpClientHandler
             {

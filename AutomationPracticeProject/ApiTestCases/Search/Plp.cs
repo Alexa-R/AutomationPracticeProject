@@ -12,6 +12,7 @@ namespace AutomationPracticeProject.ApiTestCases.Search
         [Test, Category("Priority_High")]
         public void ProductsAreDisplayedOnPageAccordingToSearch()
         {
+            LogHelper.Info("Trying to check that products are displayed on the page according to the search via API");
             var searchData = new FormUrlEncodedContent(
                     new List<KeyValuePair<string, string>>
                     {

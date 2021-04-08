@@ -21,6 +21,7 @@ namespace AutomationPracticeProject.ApiTestCases.MyAccount
             var mobilePhone = $"{RandomHelper.GetRandomNumbers(8)}";
             var addressAlias = $"AddressAlias{RandomHelper.GetRandomString(8)}";
 
+            LogHelper.Info("Trying to add address via API");
             var cookies = ApiHelper.GetAuthCookie(_client);
             var handler = new HttpClientHandler
             {

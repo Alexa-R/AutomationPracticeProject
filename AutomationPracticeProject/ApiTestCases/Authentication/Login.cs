@@ -15,6 +15,7 @@ namespace AutomationPracticeProject.ApiTestCases.Authentication
         [Test, Category("Priority_High")]
         public void LoginWithValidCredentials()
         {
+            LogHelper.Info("Trying to login via API");
             var loginData = new FormUrlEncodedContent(
                 new List<KeyValuePair<string, string>>
                 {
@@ -25,7 +26,12 @@ namespace AutomationPracticeProject.ApiTestCases.Authentication
                 }
             );
             
-            ApiHelper.SendPostRequest(_client, EndPoints.BasePath, loginData, ContentTypeConstants.FormUrlencoded);
+            var response = ApiHelper.SendPostRequest(_client, EndPoints.BasePath, loginData, ContentTypeConstants.FormUrlencoded);
+
+            var logOutButtonXpath = "//*[@class='logout']";
+            var accountButtonXpath = "//*[@class='account']";
+            HtmlAssertions.IsElementExistsOnHtmlPage(response.Result.Content.ReadAsStringAsync().Result, logOutButtonXpath).Should().BeTrue();
+            HtmlAssertions.IsElementExistsOnHtmlPage(response.Result.Content.ReadAsStringAsync().Result, accountButtonXpath).Should().BeTrue();
         }
 
         [Test, Category("Priority_High")]
@@ -41,6 +47,7 @@ namespace AutomationPracticeProject.ApiTestCases.Authentication
             var mobilePhone = $"{RandomHelper.GetRandomNumbers(8)}";
             var addressAlias = $"AddressAlias{RandomHelper.GetRandomString(8)}";
 
+            LogHelper.Info("Trying to register user via API");
             var registrationData = new FormUrlEncodedContent(
                 new List<KeyValuePair<string, string>>
                 {
