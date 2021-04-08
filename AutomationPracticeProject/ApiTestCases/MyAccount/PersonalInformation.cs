@@ -3,7 +3,9 @@ using System.Configuration;
 using System.Net.Http;
 using AutomationPracticeProject.Constants;
 using AutomationPracticeProject.Helpers;
+using AutomationPracticeProject.PageObjects;
 using AutomationPracticeProject.TestCases;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace AutomationPracticeProject.ApiTestCases.MyAccount
@@ -40,6 +42,12 @@ namespace AutomationPracticeProject.ApiTestCases.MyAccount
             );
 
             ApiHelper.SendPostRequest(_client, EndPoints.BasePath, editProfileData, ContentTypeConstants.FormUrlencoded);
+
+            Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
+            Pages.MyAccountPage.ClickMyPersonalInformationButton();
+            Pages.PersonalInformationForm.GetDaysDropdownSelectedValue().Should().BeEquivalentTo(dayOfBirth);
+            Pages.PersonalInformationForm.GetMonthDropdownSelectedValue().Should().BeEquivalentTo(monthOfBirth);
+            Pages.PersonalInformationForm.GetYearsDropdownSelectedValue().Should().BeEquivalentTo(yearOfBirth);
         }
     }
 }

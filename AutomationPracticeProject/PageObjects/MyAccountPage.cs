@@ -14,7 +14,7 @@ namespace AutomationPracticeProject.PageObjects
 
         public void ClickMyPersonalInformationButton()
         {
-            LogHelper.Info("Clicking on the Register Button");
+            LogHelper.Info("Clicking on the My Personal Information Button");
             MyPersonalInformationButton.Click();
         }
 
