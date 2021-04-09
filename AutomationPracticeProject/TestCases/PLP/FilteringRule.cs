@@ -15,6 +15,16 @@ namespace AutomationPracticeProject.TestCases.PLP
         }
 
         [Test, Category("Priority_Medium")]
+        public void NewFilterDoesNotDisablePreviousOneOnCategoryPlp()
+        {
+            Pages.BasePage.ClickProductCategoryButton(ProductCategoryNamesConstants.Women);
+            Pages.SearchResultPage.ClickOptionFromFilterChecklist(FilterNamesContstants.Styles, StylesFilterConstants.Casual);
+            Pages.SearchResultPage.ClickOptionFromFilterChecklist(FilterNamesContstants.Styles, StylesFilterConstants.Dressy);
+            Assert.True(Pages.SearchResultPage.IsOptionFromFilterChecklistChecked(FilterNamesContstants.Styles, StylesFilterConstants.Casual));
+            Assert.True(Pages.SearchResultPage.IsOptionFromFilterChecklistChecked(FilterNamesContstants.Styles, StylesFilterConstants.Dressy));
+        }
+
+        [Test, Category("Priority_Medium")]
         public void FilterProductsOnSearchPlp()
         {
             Pages.BasePage.EnterItemInSearchInputField("Women");

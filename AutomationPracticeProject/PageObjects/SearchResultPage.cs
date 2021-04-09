@@ -35,6 +35,12 @@ namespace AutomationPracticeProject.PageObjects
             new WrapperWebElement(By.XPath($"//*[@class='layered_filter'][.//*[text()='{filterName}']]//li[.//*[text()='{optionName}']]//*[@class='checker']")).Click();
         }
 
+        public bool IsOptionFromFilterChecklistChecked(string filterName, string optionName)
+        {
+            LogHelper.Info($"Verifying that the {filterName} filter {optionName} option is checked");
+            return new WrapperWebElement(By.XPath($"//*[@class='layered_filter'][.//*[text()='{filterName}']]//li[.//*[text()='{optionName}']]//*[@class='checked']")).Displayed;
+        }
+
         public bool IsProductsTitlesContainsString(string substring)
         {
             LogHelper.Info($"Checking that all products' titles on PLP contains {substring}");
