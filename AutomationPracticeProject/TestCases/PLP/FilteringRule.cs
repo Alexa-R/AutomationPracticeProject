@@ -13,5 +13,14 @@ namespace AutomationPracticeProject.TestCases.PLP
             Pages.SearchResultPage.ClickOptionFromFilterChecklist(FilterNamesContstants.Categories, CategoriesFilterConstants.Dresses);
             Assert.IsTrue(Pages.SearchResultPage.IsProductsTitlesContainsString("Dress"));
         }
+
+        [Test, Category("Priority_Medium")]
+        public void FilterProductsOnSearchPlp()
+        {
+            Pages.BasePage.EnterItemInSearchInputField("Women");
+            Pages.BasePage.KeyEnter();
+            Pages.SearchResultPage.ClickOptionFromFilterChecklist(FilterNamesContstants.Categories, CategoriesFilterConstants.Dresses);
+            Assert.IsTrue(Pages.SearchResultPage.IsProductsTitlesContainsString("Dress"));
+        }
     }
 }
