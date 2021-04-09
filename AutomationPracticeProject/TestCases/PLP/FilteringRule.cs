@@ -10,6 +10,8 @@ namespace AutomationPracticeProject.TestCases.PLP
         public void FilterProductsOnCategoryPlp()
         {
             Pages.BasePage.ClickProductCategoryButton(ProductCategoryNamesConstants.Women);
+            Pages.SearchResultPage.ClickOptionFromFilterChecklist(FilterNamesContstants.Categories, CategoriesFilterConstants.Dresses);
+            Assert.IsTrue(Pages.SearchResultPage.IsProductsTitlesContainsString("Dress"));
         }
     }
 }

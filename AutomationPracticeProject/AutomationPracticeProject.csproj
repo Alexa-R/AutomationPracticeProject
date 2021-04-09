@@ -503,11 +503,14 @@
     <Compile Include="ApiTestCases\MyAccount\MyWishLists.cs" />
     <Compile Include="ApiTestCases\MyAccount\PersonalInformation.cs" />
     <Compile Include="ApiTestCases\Search\Plp.cs" />
+    <Compile Include="Constants\CategoriesFilterConstants.cs" />
     <Compile Include="Constants\ContentTypeConstants.cs" />
     <Compile Include="Constants\CountriesDropdownConstants.cs" />
     <Compile Include="Constants\DropdownNamesConstants.cs" />
+    <Compile Include="Constants\FilterNamesContstants.cs" />
     <Compile Include="Constants\ProductCategoryNamesConstants.cs" />
     <Compile Include="Constants\StatesDropdownConstants.cs" />
+    <Compile Include="Constants\StylesFilterConstants.cs" />
     <Compile Include="Constants\SubjectHeadingDropdownConstants.cs" />
     <Compile Include="Helpers\ApiHelper.cs" />
     <Compile Include="Helpers\ExtentReportsHelper.cs" />

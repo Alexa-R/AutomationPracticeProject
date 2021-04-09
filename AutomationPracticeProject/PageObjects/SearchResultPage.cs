@@ -1,5 +1,6 @@
 ﻿using AutomationPracticeProject.Helpers;
 using AutomationPracticeProject.WrapperElement;
+using AutomationPracticeProject.WrapperFactory;
 using OpenQA.Selenium;
 
 namespace AutomationPracticeProject.PageObjects
@@ -26,6 +27,25 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info("Clicking on the First Item Add To Cart Button");
             FirstItemAddToCartButton.Click();
+        }
+
+        public void ClickOptionFromFilterChecklist(string filterName, string optionName)
+        {
+            LogHelper.Info($"Clicking on the {filterName} filter {optionName} option");
+            new WrapperWebElement(By.XPath($"//*[@class='layered_filter'][.//*[text()='{filterName}']]//li[.//*[text()='{optionName}']]//*[@class='checker']")).Click();
+        }
+
+        public bool IsProductsTitlesContainsString(string substring)
+        {
+            LogHelper.Info($"Checking that all products' titles on PLP contains {substring}");
+            var isContains = false;
+            var list = WebDriverFactory.Driver.FindElements(By.XPath("//*[@class='product_list row grid']//*[@class='product-name']"));
+            for (var i = 0; i < list.Count; i++)
+            {
+                isContains = list[i].Text.Contains(substring);
+            }
+
+            return isContains;
         }
     }
 }
