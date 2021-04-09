@@ -32,5 +32,16 @@ namespace AutomationPracticeProject.TestCases.PLP
             Pages.SearchResultPage.ClickOptionFromFilterChecklist(FilterNamesContstants.Categories, CategoriesFilterConstants.Dresses);
             Assert.IsTrue(Pages.SearchResultPage.IsProductsTitlesContainsString("Dress"));
         }
+
+        [Test, Category("Priority_Medium")]
+        public void NewFilterDoesNotDisablePreviousOneOnSearchPlp()
+        {
+            Pages.BasePage.EnterItemInSearchInputField("Dress");
+            Pages.BasePage.KeyEnter();
+            Pages.SearchResultPage.ClickOptionFromFilterChecklist(FilterNamesContstants.Styles, StylesFilterConstants.Casual);
+            Pages.SearchResultPage.ClickOptionFromFilterChecklist(FilterNamesContstants.Styles, StylesFilterConstants.Dressy);
+            Assert.True(Pages.SearchResultPage.IsOptionFromFilterChecklistChecked(FilterNamesContstants.Styles, StylesFilterConstants.Casual));
+            Assert.True(Pages.SearchResultPage.IsOptionFromFilterChecklistChecked(FilterNamesContstants.Styles, StylesFilterConstants.Dressy));
+        }
     }
 }
