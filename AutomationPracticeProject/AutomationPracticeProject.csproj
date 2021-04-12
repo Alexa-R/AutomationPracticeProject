@@ -509,6 +509,7 @@
     <Compile Include="Constants\DropdownNamesConstants.cs" />
     <Compile Include="Constants\FilterNamesContstants.cs" />
     <Compile Include="Constants\ProductCategoryNamesConstants.cs" />
+    <Compile Include="Constants\SortDropdownConstants.cs" />
     <Compile Include="Constants\StatesDropdownConstants.cs" />
     <Compile Include="Constants\StylesFilterConstants.cs" />
     <Compile Include="Constants\SubjectHeadingDropdownConstants.cs" />
@@ -552,6 +553,7 @@
     <Compile Include="TestCases\PDP\Reviews.cs" />
     <Compile Include="TestCases\PLP\AddProduct.cs" />
     <Compile Include="TestCases\PLP\FilteringRule.cs" />
+    <Compile Include="TestCases\PLP\SortingRule.cs" />
     <Compile Include="TestCases\Search\Plp.cs" />
     <Compile Include="TestCases\Search\SearchResultPopup.cs" />
     <Compile Include="TestCases\UserFlow\Checkout.cs" />
