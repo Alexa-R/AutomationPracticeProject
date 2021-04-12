@@ -11,7 +11,7 @@ namespace AutomationPracticeProject.TestCases.PLP
         {
             Pages.BasePage.ClickProductCategoryButton(ProductCategoryNamesConstants.Women);
             Pages.SearchResultPage.ClickOptionFromFilterChecklist(FilterNamesContstants.Categories, CategoriesFilterConstants.Dresses);
-            Assert.IsTrue(Pages.SearchResultPage.IsProductsTitlesContainsString("Dress"));
+            Assert.IsTrue(Pages.SearchResultPage.AreProductsTitlesContainString("Dress"));
         }
 
         [Test, Category("Priority_Medium")]
@@ -30,7 +30,7 @@ namespace AutomationPracticeProject.TestCases.PLP
             Pages.BasePage.EnterItemInSearchInputField("Women");
             Pages.BasePage.KeyEnter();
             Pages.SearchResultPage.ClickOptionFromFilterChecklist(FilterNamesContstants.Categories, CategoriesFilterConstants.Dresses);
-            Assert.IsTrue(Pages.SearchResultPage.IsProductsTitlesContainsString("Dress"));
+            Assert.IsTrue(Pages.SearchResultPage.AreProductsTitlesContainString("Dress"));
         }
 
         [Test, Category("Priority_Medium")]

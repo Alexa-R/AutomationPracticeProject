@@ -58,13 +58,13 @@ namespace AutomationPracticeProject.PageObjects
         public void ClickDropdown(string dropdownName)
         {
             LogHelper.Info($"Clicking on the {dropdownName} Dropdown Menu");
-            new WrapperWebElement(By.XPath($"//*[@id='id_{dropdownName}']")).Click();
+            new WrapperWebElement(By.XPath($"//*[@id='{dropdownName}']")).Click();
         }
 
         public void ClickOptionFromDropdown(string dropdownName, string option)
         {
             LogHelper.Info($"Clicking on the {option} from {dropdownName} Dropdown Menu");
-            new WrapperWebElement(By.XPath($"//*[@id='id_{dropdownName}']//*[@value='{option}']")).Click();
+            new WrapperWebElement(By.XPath($"//*[@id='{dropdownName}']//*[@value='{option}']")).Click();
         }
 
         public void LogIn(string login, string password)

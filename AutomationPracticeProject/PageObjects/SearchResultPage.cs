@@ -1,4 +1,7 @@
-﻿using AutomationPracticeProject.Helpers;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using AutomationPracticeProject.Helpers;
 using AutomationPracticeProject.WrapperElement;
 using AutomationPracticeProject.WrapperFactory;
 using OpenQA.Selenium;
@@ -10,6 +13,7 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement FirstItemTitle => new WrapperWebElement(By.XPath("//*[contains(@class,'first-in-line') and contains(@class,'first-item')]//*[@class='product-name']"));
         private WrapperWebElement FirstItemAddToCartButton => new WrapperWebElement(By.XPath("//*[contains(@class,'first-in-line') and contains(@class,'first-item')]//*[contains(@class,'add_to_cart')]"));
         private WrapperWebElement FirstItemCard => new WrapperWebElement(By.XPath("//*[contains(@class,'first-in-line') and contains(@class,'first-item')]"));
+        private WrapperWebElement SortDropdown => new WrapperWebElement(By.XPath("//*[@id='selectProductSort']"));
 
         public string GetFirstItemTitleText()
         {
@@ -41,17 +45,45 @@ namespace AutomationPracticeProject.PageObjects
             return new WrapperWebElement(By.XPath($"//*[@class='layered_filter'][.//*[text()='{filterName}']]//li[.//*[text()='{optionName}']]//*[@class='checked']")).Displayed;
         }
 
-        public bool IsProductsTitlesContainsString(string substring)
+        public void ClickSortDropdown()
+        {
+            LogHelper.Info($"Clicking on the Sort Dropdown Menu"); 
+            SortDropdown.Click();
+        }
+
+        public void ClickOptionFromSortDropdown(string option)
+        {
+            LogHelper.Info($"Clicking on the {option} from Sort Dropdown Menu");
+            new WrapperWebElement(By.XPath($"//*[@id='selectProductSort']//*[@value='{option}']")).Click();
+        }
+
+        public bool AreProductsTitlesContainString(string substring)
         {
             LogHelper.Info($"Checking that all products' titles on PLP contains {substring}");
-            var isContains = false;
-            var list = WebDriverFactory.Driver.FindElements(By.XPath("//*[@class='product_list row grid']//*[@class='product-name']"));
-            for (var i = 0; i < list.Count; i++)
-            {
-                isContains = list[i].Text.Contains(substring);
+            var areContain = false;
+            var productsTitlesList = WebDriverFactory.Driver.FindElements(By.XPath("//*[@class='product_list row grid']//*[@class='product-name']"));
+            foreach (var element in productsTitlesList)
+            { 
+                areContain = element.Text.Contains(substring);
             }
 
-            return isContains;
+            return areContain;
+        }
+        
+        public bool AreProductsSortedByPriceLowestFirst()
+        {
+            LogHelper.Info($"Checking that all products are sorted by Price: Lowest First");
+            var areSorted = false;
+            var productPricesTextList = new List<double>();
+            var productsPricesList = WebDriverFactory.Driver.FindElements(By.XPath("//*[@class='right-block']//*[@class='price product-price']"));
+            foreach (var element in productsPricesList)
+            {
+                productPricesTextList.Add(Convert.ToDouble(element.Text.Trim().TrimStart('$')));
+            }
+            var sortedProductsPricesTextList = productPricesTextList.OrderBy(v => v).ToList();
+            areSorted = productPricesTextList.Equals(sortedProductsPricesTextList);
+
+            return areSorted;
         }
     }
 }
