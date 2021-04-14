@@ -49,5 +49,21 @@ namespace AutomationPracticeProject.TestCases.Authentication
             Assert.IsTrue(Pages.BasePage.IsSignOutButtonDisplayed());
             Assert.IsTrue(Pages.BasePage.IsAccountButtonDisplayed());
         }
+
+        [Test, Category("Priority_Medium")]
+        public void PasswordRecovery()
+        {
+            var newPassword = $"{RandomHelper.GetRandomStringWithNumbers(8)}@mail.ru";
+
+            Pages.BasePage.ClickSignInButton();
+            Pages.AuthenticationPage.ClickForgotPasswordLink();
+            Pages.AuthenticationPage.EnterEmail(ConfigurationManager.AppSettings["Login"]);
+            Pages.ForgotPasswordPage.ClickRetrievePasswordButton();
+            var code = Pages.ForgotPasswordPage.GetCodeFromMessage("Lizy Flower", "me");
+            Pages.ForgotPasswordPage.EnterVerificationCode(code);
+            Pages.ForgotPasswordPage.ClickSubmitCodeButton();
+            Pages.ForgotPasswordPage.EnterNewPassword("password");
+            Pages.ForgotPasswordPage.EnterNewPasswordAgain("password");
+        }
     }
 }

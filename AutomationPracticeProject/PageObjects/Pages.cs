@@ -40,5 +40,7 @@
         public static ReviewPopup ReviewPopup => GetPage<ReviewPopup>();
 
         public static SearchResultPage SearchResultPage => GetPage<SearchResultPage>();
+
+        public static ForgotPasswordPage ForgotPasswordPage => GetPage<ForgotPasswordPage>();
     }
 }

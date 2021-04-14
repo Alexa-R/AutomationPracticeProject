@@ -525,6 +525,7 @@
     <Compile Include="PageObjects\BasePage.cs" />
     <Compile Include="PageObjects\CheckoutPage.cs" />
     <Compile Include="PageObjects\ContactPage.cs" />
+    <Compile Include="PageObjects\ForgotPasswordPage.cs" />
     <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="PageObjects\MyAccountPage.cs" />
     <Compile Include="PageObjects\MyWishListsPage.cs" />

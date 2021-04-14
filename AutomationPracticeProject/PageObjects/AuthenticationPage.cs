@@ -11,6 +11,7 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement SignInButton => new WrapperWebElement(By.XPath("//*[@id='SubmitLogin']"));
         private WrapperWebElement RegistrationEmailInputField => new WrapperWebElement(By.XPath("//*[@id='email_create']"));
         private WrapperWebElement CreateAnAccountButton => new WrapperWebElement(By.XPath("//*[@id='SubmitCreate']"));
+        private WrapperWebElement ForgotPasswordLink => new WrapperWebElement(By.XPath("//*[contains(@href,'password')]"));
 
         public void EnterEmail(string mail)
         {
@@ -40,6 +41,12 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info("Clicking on the SignIn Button");
             SignInButton.Click();
+        }
+
+        public void ClickForgotPasswordLink()
+        {
+            LogHelper.Info("Clicking on the Forgot Password Link");
+            ForgotPasswordLink.Click();
         }
     }
 }

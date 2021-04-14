@@ -92,9 +92,9 @@ namespace AutomationPracticeProject.PageObjects
             LogHelper.Info("Getting the Order Reference");
             var orderConfirmationText = OrderConfirmationBox.Text;
             var startWith = "reference";
-            var substring = orderConfirmationText.Substring(orderConfirmationText.IndexOf(startWith, StringComparison.Ordinal)+1);
+            var substring = orderConfirmationText.Substring(orderConfirmationText.IndexOf(startWith, StringComparison.Ordinal) + startWith.Length);
             var orderConfirmationArray = substring.Trim().Split(new char[] { ' ', '.', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            return orderConfirmationArray[1];
+            return orderConfirmationArray[0];
         }
 
         public string GetLastProductTitleText()
