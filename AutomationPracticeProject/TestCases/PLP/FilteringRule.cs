@@ -6,7 +6,7 @@ namespace AutomationPracticeProject.TestCases.PLP
 {
     public class FilteringRule : BaseTest
     {
-        [Test, Category("Priority_Medium")]
+        [Test, Category("Medium")]
         public void FilterProductsOnCategoryPlp()
         {
             Pages.BasePage.ClickProductCategoryButton(ProductCategoryNamesConstants.Women);
@@ -14,7 +14,7 @@ namespace AutomationPracticeProject.TestCases.PLP
             Assert.IsTrue(Pages.SearchResultPage.AreProductsTitlesContainString("Dress"));
         }
 
-        [Test, Category("Priority_Medium")]
+        [Test, Category("Medium")]
         public void NewFilterDoesNotDisablePreviousOneOnCategoryPlp()
         {
             Pages.BasePage.ClickProductCategoryButton(ProductCategoryNamesConstants.Women);
@@ -24,7 +24,7 @@ namespace AutomationPracticeProject.TestCases.PLP
             Assert.True(Pages.SearchResultPage.IsOptionFromFilterChecklistChecked(FilterNamesContstants.Styles, StylesFilterConstants.Dressy));
         }
 
-        [Test, Category("Priority_Medium")]
+        [Test, Category("Medium")]
         public void FilterProductsOnSearchPlp()
         {
             Pages.BasePage.EnterItemInSearchInputField("Women");
@@ -33,7 +33,7 @@ namespace AutomationPracticeProject.TestCases.PLP
             Assert.IsTrue(Pages.SearchResultPage.AreProductsTitlesContainString("Dress"));
         }
 
-        [Test, Category("Priority_Medium")]
+        [Test, Category("Medium")]
         public void NewFilterDoesNotDisablePreviousOneOnSearchPlp()
         {
             Pages.BasePage.EnterItemInSearchInputField("Dress");

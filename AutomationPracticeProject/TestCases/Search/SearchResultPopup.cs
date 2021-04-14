@@ -5,7 +5,7 @@ namespace AutomationPracticeProject.TestCases.Search
 {
     public class SearchResultPopup : BaseTest
     {
-        [Test, Category("Priority_Medium")]
+        [Test, Category("Medium")]
         public void GoToProductThroughSearchResultPopup()
         {
             Pages.BasePage.EnterItemInSearchInputField("Printed Dress");

@@ -6,7 +6,7 @@ namespace AutomationPracticeProject.TestCases.Cart
 {
     public class CartModifications : BaseTest
     {
-        [Test, Category("Priority_High")]
+        [Test, Category("High")]
         public void EditCart()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);

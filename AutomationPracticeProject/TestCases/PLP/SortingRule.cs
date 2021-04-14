@@ -6,7 +6,7 @@ namespace AutomationPracticeProject.TestCases.PLP
 {
     public class SortingRule : BaseTest
     {
-        [Test, Category("Priority_Medium")]
+        [Test, Category("Medium")]
         public void SortProductsOnCategoryPlp()
         {
             Pages.BasePage.ClickProductCategoryButton(ProductCategoryNamesConstants.Women);
@@ -15,7 +15,7 @@ namespace AutomationPracticeProject.TestCases.PLP
             Assert.IsTrue(Pages.SearchResultPage.AreProductsSortedByPriceLowestFirst());
         }
 
-        [Test, Category("Priority_Medium")]
+        [Test, Category("Medium")]
         public void SortProductsOnSearchPlp()
         {
             Pages.BasePage.EnterItemInSearchInputField("Dress");

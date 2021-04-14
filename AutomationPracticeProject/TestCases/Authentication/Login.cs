@@ -8,7 +8,7 @@ namespace AutomationPracticeProject.TestCases.Authentication
 {
     public class Login : BaseTest
     {
-        [Test, Category("Priority_High")]
+        [Test, Category("High")]
         public void LoginWithValidCredentials()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
@@ -16,7 +16,7 @@ namespace AutomationPracticeProject.TestCases.Authentication
             Assert.IsTrue(Pages.BasePage.IsAccountButtonDisplayed());
         }
 
-        [Test, Category("Priority_High")]
+        [Test, Category("High")]
         public void RegistrationWithValidCredentials()
         {
             var registrationEmail = $"{RandomHelper.GetRandomStringWithNumbers(8)}@mail.ru";
@@ -50,7 +50,7 @@ namespace AutomationPracticeProject.TestCases.Authentication
             Assert.IsTrue(Pages.BasePage.IsAccountButtonDisplayed());
         }
 
-        [Test, Category("Priority_Medium")]
+        [Test, Category("Medium")]
         public void PasswordRecovery()
         {
             var newPassword = $"{RandomHelper.GetRandomStringWithNumbers(8)}@mail.ru";

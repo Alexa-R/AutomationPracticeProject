@@ -7,7 +7,7 @@ namespace AutomationPracticeProject.TestCases.PDP
 {
     public class Reviews : BaseTest
     {
-        [Test, Category("Priority_Medium")]
+        [Test, Category("Medium")]
         public void AddReview()
         {
             var reviewTitle = $"ReviewTitle{RandomHelper.GetRandomStringWithNumbers(8)}";

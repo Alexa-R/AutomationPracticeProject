@@ -7,7 +7,7 @@ namespace AutomationPracticeProject.TestCases.PDP
 {
     public class AddProduct : BaseTest
     {
-        [Test, Category("Priority_High")]
+        [Test, Category("High")]
         public void AddProductToCartFromPdp()
         {
             Pages.BasePage.EnterItemInSearchInputField("Printed Dress");
@@ -18,7 +18,7 @@ namespace AutomationPracticeProject.TestCases.PDP
             Assert.AreEqual(productTitle, Pages.CheckoutPage.GetLastProductTitleText());
         }
 
-        [Test, Category("Priority_Medium")]
+        [Test, Category("Medium")]
         public void AddProductToWishListFromPdp()
         {
             var wishListName = $"WishListName{RandomHelper.GetRandomString(8)}";
