@@ -170,6 +170,7 @@
     <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
     <Reference Include="Microsoft.CodeAnalysis, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeAnalysis.Common.2.8.0\lib\netstandard1.3\Microsoft.CodeAnalysis.dll</HintPath>
     </Reference>
@@ -313,6 +314,7 @@
       <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -496,13 +498,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiTestCases\HtmlAssertions.cs" />
-    <Compile Include="ApiTestCases\Authentication\Login.cs" />
-    <Compile Include="ApiTestCases\EndPoints.cs" />
-    <Compile Include="ApiTestCases\MyAccount\MyAddresses.cs" />
-    <Compile Include="ApiTestCases\MyAccount\MyWishLists.cs" />
-    <Compile Include="ApiTestCases\MyAccount\PersonalInformation.cs" />
-    <Compile Include="ApiTestCases\Search\Plp.cs" />
+    <Compile Include="TestCases\ApiTestCases\HtmlAssertions.cs" />
+    <Compile Include="TestCases\ApiTestCases\Authentication\Login.cs" />
+    <Compile Include="TestCases\ApiTestCases\EndPoints.cs" />
+    <Compile Include="TestCases\ApiTestCases\MyAccount\MyAddresses.cs" />
+    <Compile Include="TestCases\ApiTestCases\MyAccount\MyWishLists.cs" />
+    <Compile Include="TestCases\ApiTestCases\MyAccount\PersonalInformation.cs" />
+    <Compile Include="TestCases\ApiTestCases\Search\Plp.cs" />
     <Compile Include="Constants\CategoriesFilterConstants.cs" />
     <Compile Include="Constants\ContentTypeConstants.cs" />
     <Compile Include="Constants\CountriesDropdownConstants.cs" />
@@ -538,26 +540,26 @@
     <Compile Include="PageObjects\ReviewPopup.cs" />
     <Compile Include="PageObjects\SearchResultPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestCases\AccountManagement\Logout.cs" />
-    <Compile Include="TestCases\Authentication\Login.cs" />
+    <Compile Include="TestCases\UiTestCases\AccountManagement\Logout.cs" />
+    <Compile Include="TestCases\UiTestCases\Authentication\Login.cs" />
     <Compile Include="TestCases\BaseSuite.cs" />
     <Compile Include="TestCases\BaseTest.cs" />
-    <Compile Include="TestCases\Cart\CartModifications.cs" />
-    <Compile Include="TestCases\ContactPage\SendMessage.cs" />
-    <Compile Include="TestCases\HomePage\AddProduct.cs" />
-    <Compile Include="TestCases\MyAccount\MyAddresses.cs" />
-    <Compile Include="TestCases\MyAccount\MyWishLists.cs" />
-    <Compile Include="TestCases\MyAccount\OrderHistory.cs" />
-    <Compile Include="TestCases\MyAccount\PersonalInformation.cs" />
-    <Compile Include="TestCases\PDP\AddProduct.cs" />
-    <Compile Include="TestCases\PDP\PdpDisplay.cs" />
-    <Compile Include="TestCases\PDP\Reviews.cs" />
-    <Compile Include="TestCases\PLP\AddProduct.cs" />
-    <Compile Include="TestCases\PLP\FilteringRule.cs" />
-    <Compile Include="TestCases\PLP\SortingRule.cs" />
-    <Compile Include="TestCases\Search\Plp.cs" />
-    <Compile Include="TestCases\Search\SearchResultPopup.cs" />
-    <Compile Include="TestCases\UserFlow\Checkout.cs" />
+    <Compile Include="TestCases\UiTestCases\Cart\CartModifications.cs" />
+    <Compile Include="TestCases\UiTestCases\ContactPage\SendMessage.cs" />
+    <Compile Include="TestCases\UiTestCases\HomePage\AddProduct.cs" />
+    <Compile Include="TestCases\UiTestCases\MyAccount\MyAddresses.cs" />
+    <Compile Include="TestCases\UiTestCases\MyAccount\MyWishLists.cs" />
+    <Compile Include="TestCases\UiTestCases\MyAccount\OrderHistory.cs" />
+    <Compile Include="TestCases\UiTestCases\MyAccount\PersonalInformation.cs" />
+    <Compile Include="TestCases\UiTestCases\PDP\AddProduct.cs" />
+    <Compile Include="TestCases\UiTestCases\PDP\PdpDisplay.cs" />
+    <Compile Include="TestCases\UiTestCases\PDP\Reviews.cs" />
+    <Compile Include="TestCases\UiTestCases\PLP\AddProduct.cs" />
+    <Compile Include="TestCases\UiTestCases\PLP\FilteringRule.cs" />
+    <Compile Include="TestCases\UiTestCases\PLP\SortingRule.cs" />
+    <Compile Include="TestCases\UiTestCases\Search\Plp.cs" />
+    <Compile Include="TestCases\UiTestCases\Search\SearchResultPopup.cs" />
+    <Compile Include="TestCases\UiTestCases\UserFlow\Checkout.cs" />
     <Compile Include="WrapperElement\WrapperWebElement.cs" />
     <Compile Include="WrapperFactory\WebDriverFactory.cs" />
   </ItemGroup>

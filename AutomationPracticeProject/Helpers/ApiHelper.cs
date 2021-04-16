@@ -5,8 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using AutomationPracticeProject.ApiTestCases;
 using AutomationPracticeProject.Constants;
+using AutomationPracticeProject.TestCases.ApiTestCases;
 
 namespace AutomationPracticeProject.Helpers
 {

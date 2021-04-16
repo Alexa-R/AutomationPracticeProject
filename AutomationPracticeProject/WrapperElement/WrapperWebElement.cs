@@ -123,18 +123,18 @@ namespace AutomationPracticeProject.WrapperElement
 
         public string Text => WaitHelper.GetExplicitWait()
             .Until(d =>
-        {
-            try
             {
-                return WebElementImplementation.Text;
-            }
-            catch (Exception ex)
-            {
-                LogHelper.Error("Unable to get the element's text! Exception message: " + ex.Message);
+                try
+                {
+                    return WebElementImplementation.Text;
+                }
+                catch (Exception ex)
+                {
+                    LogHelper.Error("Unable to get the element's text! Exception message: " + ex.Message);
 
-                return null;
-            }
-        });
+                    return null;
+                }
+            });
 
         public bool Enabled => WaitHelper.GetExplicitWait().Until(d => WebElementImplementation.Enabled);
 

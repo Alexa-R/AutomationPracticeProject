@@ -16,6 +16,7 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement OrderConfirmationTitle => new WrapperWebElement(By.XPath("//*[@class='cheque-indent']"));
         private WrapperWebElement OrderConfirmationBox => new WrapperWebElement(By.XPath("//*[@class='box order-confirmation']"));
         private WrapperWebElement SuccessAlert => new WrapperWebElement(By.XPath("//*[@class='alert alert-success']"));
+        private WrapperWebElement WarningAlert => new WrapperWebElement(By.XPath("//*[@class='alert alert-warning']"));
         private WrapperWebElement AddNewAddressButton => new WrapperWebElement(By.XPath("//*[@title='Add']"));
         private WrapperWebElement EqualityAddressesCheckBox => new WrapperWebElement(By.XPath("//*[@id='uniform-addressesAreEquals']"));
         private WrapperWebElement LastProductTitle => new WrapperWebElement(By.XPath("//*[contains(@class,'last_item')]//*[@class='product-name']"));
@@ -67,6 +68,13 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info("Checking the display of the SuccessAlert");
             return SuccessAlert.Displayed;
+        }
+
+        public string GetWarningAlertText()
+        {
+            LogHelper.Info("Getting of Warning Alert Text");
+            WarningAlert.WaitForElementIsStale();
+            return WarningAlert.Text;
         }
 
         public void ClickAddNewAddressButton()
