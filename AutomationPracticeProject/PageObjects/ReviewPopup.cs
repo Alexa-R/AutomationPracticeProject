@@ -34,11 +34,5 @@ namespace AutomationPracticeProject.PageObjects
             LogHelper.Info("Getting the Result Popup Text");
             return ResultPopup.Text;
         }
-
-        public void WaitUntilResultPopupIsDisplayed()
-        {
-            LogHelper.Info("Waiting for Result Popup is display");
-            ResultPopup.WaitForElementIsDisplayed(3000);
-        }
     }
 }

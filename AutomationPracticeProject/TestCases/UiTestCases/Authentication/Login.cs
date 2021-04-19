@@ -64,6 +64,10 @@ namespace AutomationPracticeProject.TestCases.UiTestCases.Authentication
             Pages.ForgotPasswordPage.ClickSubmitCodeButton();
             Pages.ForgotPasswordPage.EnterNewPassword("password");
             Pages.ForgotPasswordPage.EnterNewPasswordAgain("password");
+            Pages.ForgotPasswordPage.ClickSubmitNewPasswordButton();
+            Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], newPassword);
+            Assert.IsTrue(Pages.BasePage.IsSignOutButtonDisplayed());
+            Assert.IsTrue(Pages.BasePage.IsAccountButtonDisplayed());
         }
     }
 }

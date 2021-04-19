@@ -7,19 +7,13 @@ namespace AutomationPracticeProject.PageObjects
 {
     public class ForgotPasswordPage
     {
-        private WrapperWebElement EmailAddressInputField => new WrapperWebElement(By.XPath("//*[@id='email']"));
         private WrapperWebElement RetrievePasswordButton => new WrapperWebElement(By.XPath("//*[@id='form_forgotpassword']//*[@type='submit']"));
         private WrapperWebElement VerificationCodeInputField => new WrapperWebElement(By.XPath("//*[@id='Ver_Code']"));
         private WrapperWebElement SubmitCodeButton => new WrapperWebElement(By.XPath("//*[@id='form_code']//*[@type='submit']"));
         private WrapperWebElement NewPasswordInputField => new WrapperWebElement(By.XPath("//*[@id='new_password']"));
         private WrapperWebElement NewPasswordAgainInputField => new WrapperWebElement(By.XPath("//*[@id='new_password_again']"));
-
-        public void EnterWishListName(string email)
-        {
-            LogHelper.Info($"Entering of the Email Address");
-            EmailAddressInputField.SendKeys(email);
-        }
-
+        private WrapperWebElement SubmitNewPasswordButton => new WrapperWebElement(By.XPath("//*[@id='submit_new_password']"));
+        
         public void ClickRetrievePasswordButton()
         {
             LogHelper.Info("Clicking on the Retrieve Password Button");
@@ -57,6 +51,12 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info($"Entering of the New Password Again");
             NewPasswordAgainInputField.SendKeys(newPassword);
+        }
+
+        public void ClickSubmitNewPasswordButton()
+        {
+            LogHelper.Info("Clicking on the Submit New Password Button");
+            SubmitNewPasswordButton.Click();
         }
     }
 }

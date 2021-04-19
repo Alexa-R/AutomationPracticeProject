@@ -13,7 +13,6 @@ namespace AutomationPracticeProject.PageObjects
         private WrapperWebElement FirstItemTitle => new WrapperWebElement(By.XPath("//*[contains(@class,'first-in-line') and contains(@class,'first-item')]//*[@class='product-name']"));
         private WrapperWebElement FirstItemAddToCartButton => new WrapperWebElement(By.XPath("//*[contains(@class,'first-in-line') and contains(@class,'first-item')]//*[contains(@class,'add_to_cart')]"));
         private WrapperWebElement FirstItemCard => new WrapperWebElement(By.XPath("//*[contains(@class,'first-in-line') and contains(@class,'first-item')]"));
-        private WrapperWebElement SortDropdown => new WrapperWebElement(By.XPath("//*[@id='selectProductSort']"));
 
         public string GetFirstItemTitleText()
         {
@@ -43,18 +42,6 @@ namespace AutomationPracticeProject.PageObjects
         {
             LogHelper.Info($"Verifying that the {filterName} filter {optionName} option is checked");
             return new WrapperWebElement(By.XPath($"//*[@class='layered_filter'][.//*[text()='{filterName}']]//li[.//*[text()='{optionName}']]//*[@class='checked']")).Displayed;
-        }
-
-        public void ClickSortDropdown()
-        {
-            LogHelper.Info($"Clicking on the Sort Dropdown Menu"); 
-            SortDropdown.Click();
-        }
-
-        public void ClickOptionFromSortDropdown(string option)
-        {
-            LogHelper.Info($"Clicking on the {option} from Sort Dropdown Menu");
-            new WrapperWebElement(By.XPath($"//*[@id='selectProductSort']//*[@value='{option}']")).Click();
         }
 
         public bool AreProductsTitlesContainString(string substring)
