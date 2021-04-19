@@ -92,7 +92,7 @@ namespace AutomationPracticeProject.PageObjects
         public void ClickAddressFromDropdown(string dropdownName, string addressName)
         {
             LogHelper.Info($"Clicking on the {addressName} from {dropdownName} Dropdown Menu");
-            new WrapperWebElement(By.XPath($"//*[@id='id_{dropdownName}']//*[contains(text(),'{addressName}')]")).Click();
+            new WrapperWebElement(By.XPath($"//*[@id='{dropdownName}']//*[contains(text(),'{addressName}')]")).Click();
         }
 
         public string GetOrderReference()

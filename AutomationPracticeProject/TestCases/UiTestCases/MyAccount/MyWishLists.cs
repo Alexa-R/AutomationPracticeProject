@@ -7,17 +7,17 @@ namespace AutomationPracticeProject.TestCases.UiTestCases.MyAccount
 {
     public class MyWishLists : BaseTest
     {
-        private string wishListName = $"WishListName{RandomHelper.GetRandomString(8)}";
+        private string _wishListName = $"WishListName{RandomHelper.GetRandomString(8)}";
 
         [Test, Category("Medium")]
         public void AddNewWishList()
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
             Pages.MyAccountPage.ClickMyWishListsButton();
-            Pages.MyWishListsPage.CreateWishList(wishListName);
-            Assert.That(Pages.MyWishListsPage.GetWishListsTableText(), Contains.Substring(wishListName));
+            Pages.MyWishListsPage.CreateWishList(_wishListName);
+            Assert.That(Pages.MyWishListsPage.GetWishListsTableText(), Contains.Substring(_wishListName));
 
-            Pages.MyWishListsPage.DeleteWishList(wishListName);
+            Pages.MyWishListsPage.DeleteWishList(_wishListName);
         }
 
         [Test, Category("Medium")]
@@ -25,9 +25,9 @@ namespace AutomationPracticeProject.TestCases.UiTestCases.MyAccount
         {
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
             Pages.MyAccountPage.ClickMyWishListsButton();
-            Pages.MyWishListsPage.CreateWishList(wishListName);
-            Pages.MyWishListsPage.DeleteWishList(wishListName);
-            Assert.That(Pages.MyWishListsPage.GetWishListsTableText(), !Contains.Substring(wishListName.ToUpper()));
+            Pages.MyWishListsPage.CreateWishList(_wishListName);
+            Pages.MyWishListsPage.DeleteWishList(_wishListName);
+            Assert.That(Pages.MyWishListsPage.GetWishListsTableText(), !Contains.Substring(_wishListName.ToUpper()));
         }
 
         [Test, Category("Medium")]
@@ -37,14 +37,14 @@ namespace AutomationPracticeProject.TestCases.UiTestCases.MyAccount
 
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
             Pages.MyAccountPage.ClickMyWishListsButton();
-            Pages.MyWishListsPage.CreateWishList(wishListName);
-            Pages.MyWishListsPage.ClickWishList(wishListName);
+            Pages.MyWishListsPage.CreateWishList(_wishListName);
+            Pages.MyWishListsPage.ClickWishList(_wishListName);
             Pages.MyWishListsPage.ClickEditButton();
             Pages.MyWishListsPage.EnterNewWishListName(newWishListName);
             Pages.MyWishListsPage.ClickSaveChangesButton();
-            Assert.That(Pages.MyWishListsPage.GetWishListsTableText(), Contains.Substring(wishListName));
+            Assert.That(Pages.MyWishListsPage.GetWishListsTableText(), Contains.Substring(_wishListName));
 
-            Pages.MyWishListsPage.DeleteWishList(wishListName);
+            Pages.MyWishListsPage.DeleteWishList(_wishListName);
         }
     }
 }

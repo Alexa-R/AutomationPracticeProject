@@ -30,12 +30,8 @@ namespace AutomationPracticeProject.TestCases.ApiTestCases.Authentication
 
             var logOutButtonXpath = "//*[@class='logout']";
             var accountButtonXpath = "//*[@class='account']";
-            HtmlAssertions
-                .IsElementExistsOnHtmlPage(response.Result.Content.ReadAsStringAsync().Result, logOutButtonXpath)
-                .Should().BeTrue();
-            HtmlAssertions
-                .IsElementExistsOnHtmlPage(response.Result.Content.ReadAsStringAsync().Result, accountButtonXpath)
-                .Should().BeTrue();
+            HtmlAssertions.IsElementExistsOnHtmlPage(response.Result.Content.ReadAsStringAsync().Result, logOutButtonXpath).Should().BeTrue();
+            HtmlAssertions.IsElementExistsOnHtmlPage(response.Result.Content.ReadAsStringAsync().Result, accountButtonXpath).Should().BeTrue();
         }
 
         [Test, Category("High")]
@@ -73,8 +69,7 @@ namespace AutomationPracticeProject.TestCases.ApiTestCases.Authentication
                 }
             );
 
-            ApiHelper.SendPostRequest(_client, EndPoints.BasePath, registrationData,
-                ContentTypeConstants.FormUrlencoded);
+            ApiHelper.SendPostRequest(_client, EndPoints.BasePath, registrationData, ContentTypeConstants.FormUrlencoded);
 
             Pages.BasePage.LogIn(registrationEmail, password);
             Pages.BasePage.IsSignOutButtonDisplayed().Should().BeTrue();

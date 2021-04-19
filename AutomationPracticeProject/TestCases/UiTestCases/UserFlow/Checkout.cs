@@ -8,11 +8,11 @@ namespace AutomationPracticeProject.TestCases.UiTestCases.UserFlow
 {
     public class Checkout : BaseTest
     {
-        private string address = $"Address{RandomHelper.GetRandomString(8)}";
-        private string city = $"City{RandomHelper.GetRandomString(8)}";
-        private string zipCode = $"{RandomHelper.GetRandomNumbers(5)}";
-        private string mobilePhone = $"{RandomHelper.GetRandomNumbers(8)}";
-        private string addressAlias = $"AddressAlias{RandomHelper.GetRandomString(8)}";
+        private string _address = $"Address{RandomHelper.GetRandomString(8)}";
+        private string _city = $"City{RandomHelper.GetRandomString(8)}";
+        private string _zipCode = $"{RandomHelper.GetRandomNumbers(5)}";
+        private string _mobilePhone = $"{RandomHelper.GetRandomNumbers(8)}";
+        private string _addressAlias = $"AddressAlias{RandomHelper.GetRandomString(8)}";
 
         [Test, Category("Priority_High")]
         public void CheckoutUsingBankWire()
@@ -59,9 +59,9 @@ namespace AutomationPracticeProject.TestCases.UiTestCases.UserFlow
             Pages.CheckoutPage.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickEqualityAddressesCheckBox();
             Pages.CheckoutPage.ClickAddNewAddressButton();
-            Pages.AddressForm.CreateNewAddress(address, city, StatesDropdownConstants.Alabama, zipCode, CountriesDropdownConstants.UnitedStates, mobilePhone, addressAlias);
+            Pages.AddressForm.CreateNewAddress(_address, _city, StatesDropdownConstants.Alabama, _zipCode, CountriesDropdownConstants.UnitedStates, _mobilePhone, _addressAlias);
             Pages.BasePage.ClickDropdown(DropdownNamesConstants.DeliveryAddressDropdown);
-            Pages.CheckoutPage.ClickAddressFromDropdown(DropdownNamesConstants.DeliveryAddressDropdown, addressAlias);
+            Pages.CheckoutPage.ClickAddressFromDropdown(DropdownNamesConstants.DeliveryAddressDropdown, _addressAlias);
             Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
             Pages.CheckoutPage.ClickTermsOfServiceAgreementCheckBox();
             Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
@@ -85,9 +85,9 @@ namespace AutomationPracticeProject.TestCases.UiTestCases.UserFlow
             Pages.CheckoutPage.ClickProceedToCheckoutButton();
             Pages.CheckoutPage.ClickEqualityAddressesCheckBox();
             Pages.CheckoutPage.ClickAddNewAddressButton();
-            Pages.AddressForm.CreateNewAddress(address, city, StatesDropdownConstants.Alabama, zipCode, CountriesDropdownConstants.UnitedStates, mobilePhone, addressAlias);
+            Pages.AddressForm.CreateNewAddress(_address, _city, StatesDropdownConstants.Alabama, _zipCode, CountriesDropdownConstants.UnitedStates, _mobilePhone, _addressAlias);
             Pages.BasePage.ClickDropdown(DropdownNamesConstants.BillingAddressDropdown);
-            Pages.CheckoutPage.ClickAddressFromDropdown(DropdownNamesConstants.DeliveryAddressDropdown, addressAlias);
+            Pages.CheckoutPage.ClickAddressFromDropdown(DropdownNamesConstants.BillingAddressDropdown, _addressAlias);
             Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();
             Pages.CheckoutPage.ClickTermsOfServiceAgreementCheckBox();
             Pages.CheckoutPage.ClickSubmitProceedToCheckoutButton();

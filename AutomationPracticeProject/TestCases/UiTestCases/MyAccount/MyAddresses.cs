@@ -8,11 +8,11 @@ namespace AutomationPracticeProject.TestCases.UiTestCases.MyAccount
 {
     public class MyAddresses : BaseTest
     {
-        private string address = $"Address{RandomHelper.GetRandomString(8)}";
-        private string city = $"City{RandomHelper.GetRandomString(8)}";
-        private string zipCode = $"{RandomHelper.GetRandomNumbers(5)}";
-        private string mobilePhone = $"{RandomHelper.GetRandomNumbers(8)}";
-        private string addressAlias = $"AddressAlias{RandomHelper.GetRandomString(8)}";
+        private string _address = $"Address{RandomHelper.GetRandomString(8)}";
+        private string _city = $"City{RandomHelper.GetRandomString(8)}";
+        private string _zipCode = $"{RandomHelper.GetRandomNumbers(5)}";
+        private string _mobilePhone = $"{RandomHelper.GetRandomNumbers(8)}";
+        private string _addressAlias = $"AddressAlias{RandomHelper.GetRandomString(8)}";
 
         [Test, Category("High")]
         public void AddNewAddress()
@@ -20,8 +20,8 @@ namespace AutomationPracticeProject.TestCases.UiTestCases.MyAccount
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
             Pages.MyAccountPage.ClickMyAddressesButton();
             Pages.AddressesPage.ClickAddNewAddressButton();
-            Pages.AddressForm.CreateNewAddress(address, city, StatesDropdownConstants.Alabama, zipCode, CountriesDropdownConstants.UnitedStates, mobilePhone, addressAlias);
-            Assert.That(Pages.AddressesPage.GetLastAddressCardText(), Contains.Substring(addressAlias.ToUpper()));
+            Pages.AddressForm.CreateNewAddress(_address, _city, StatesDropdownConstants.Alabama, _zipCode, CountriesDropdownConstants.UnitedStates, _mobilePhone, _addressAlias);
+            Assert.That(Pages.AddressesPage.GetLastAddressCardText(), Contains.Substring(_addressAlias.ToUpper()));
 
             Pages.AddressesPage.DeleteLastAddress();
         }
@@ -34,7 +34,7 @@ namespace AutomationPracticeProject.TestCases.UiTestCases.MyAccount
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
             Pages.MyAccountPage.ClickMyAddressesButton();
             Pages.AddressesPage.ClickAddNewAddressButton();
-            Pages.AddressForm.CreateNewAddress(address, city, StatesDropdownConstants.Alabama, zipCode, CountriesDropdownConstants.UnitedStates, mobilePhone, addressAlias);
+            Pages.AddressForm.CreateNewAddress(_address, _city, StatesDropdownConstants.Alabama, _zipCode, CountriesDropdownConstants.UnitedStates, _mobilePhone, _addressAlias);
             Pages.AddressesPage.ClickLastAddressCardUpdateButton();
             Pages.AddressForm.EnterCity(updateCity);
             Pages.AddressForm.ClickSaveButton();
@@ -49,9 +49,9 @@ namespace AutomationPracticeProject.TestCases.UiTestCases.MyAccount
             Pages.BasePage.LogIn(ConfigurationManager.AppSettings["Login"], ConfigurationManager.AppSettings["Password"]);
             Pages.MyAccountPage.ClickMyAddressesButton();
             Pages.AddressesPage.ClickAddNewAddressButton();
-            Pages.AddressForm.CreateNewAddress(address, city, StatesDropdownConstants.Alabama, zipCode, CountriesDropdownConstants.UnitedStates, mobilePhone, addressAlias);
+            Pages.AddressForm.CreateNewAddress(_address, _city, StatesDropdownConstants.Alabama, _zipCode, CountriesDropdownConstants.UnitedStates, _mobilePhone, _addressAlias);
             Pages.AddressesPage.DeleteLastAddress();
-            Assert.That(Pages.AddressesPage.GetLastAddressCardText(), !Contains.Substring(addressAlias.ToUpper()));
+            Assert.That(Pages.AddressesPage.GetLastAddressCardText(), !Contains.Substring(_addressAlias.ToUpper()));
         }
     }
 }
