@@ -1,5 +1,6 @@
 using System;
 using System.Configuration;
+using System.Net.Http;
 using AutomationPracticeProject.Helpers;
 using AutomationPracticeProject.WrapperFactory;
 using NUnit.Allure.Core;
@@ -12,9 +13,12 @@ namespace AutomationPracticeProject.TestCases
     [TestFixture]
     public class BaseTest 
     {
+        protected HttpClient _client;
+
         [SetUp]
         public void SetUpTest()
         {
+            _client = new HttpClient();
             ExtentReportsHelper.GetExtentReportsHelper().CreateTest(TestContext.CurrentContext.Test.Name);
             WebDriverFactory.InitBrowser("Chrome");
             LogHelper.Info("Browser started.");
@@ -53,6 +57,7 @@ namespace AutomationPracticeProject.TestCases
             }
             finally
             {
+                _client.Dispose();
                 WebDriverFactory.CloseAllDrivers();
                 LogHelper.Info("Browser closed.");
             }
