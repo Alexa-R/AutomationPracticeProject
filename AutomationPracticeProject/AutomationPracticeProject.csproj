@@ -56,6 +56,9 @@
     <Reference Include="ExtentReports, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ExtentReports.4.1.0\lib\netstandard2.0\ExtentReports.dll</HintPath>
     </Reference>
+    <Reference Include="FluentAssertions, Version=5.10.3.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.5.10.3\lib\net47\FluentAssertions.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Apis, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.51.0\lib\net45\Google.Apis.dll</HintPath>
     </Reference>
@@ -73,6 +76,9 @@
     </Reference>
     <Reference Include="Google.Apis.PlatformServices, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.51.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.32.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.32\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
@@ -164,6 +170,7 @@
     <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
     <Reference Include="Microsoft.CodeAnalysis, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeAnalysis.Common.2.8.0\lib\netstandard1.3\Microsoft.CodeAnalysis.dll</HintPath>
     </Reference>
@@ -282,6 +289,9 @@
     <Reference Include="RazorEngine.NetCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
       <HintPath>..\packages\RazorEngine.NetCore.2.2.6\lib\net461\RazorEngine.NetCore.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="SharpCompress, Version=0.23.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpCompress.0.23.0\lib\net45\SharpCompress.dll</HintPath>
     </Reference>
@@ -304,6 +314,7 @@
       <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -487,39 +498,88 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestCases\ApiTestCases\HtmlAssertions.cs" />
+    <Compile Include="TestCases\ApiTestCases\Authentication\Login.cs" />
+    <Compile Include="TestCases\ApiTestCases\EndPoints.cs" />
+    <Compile Include="TestCases\ApiTestCases\MyAccount\MyAddresses.cs" />
+    <Compile Include="TestCases\ApiTestCases\MyAccount\MyWishLists.cs" />
+    <Compile Include="TestCases\ApiTestCases\MyAccount\PersonalInformation.cs" />
+    <Compile Include="TestCases\ApiTestCases\Search\Plp.cs" />
+    <Compile Include="Constants\CategoriesFilterConstants.cs" />
+    <Compile Include="Constants\ContentTypeConstants.cs" />
+    <Compile Include="Constants\CountriesDropdownConstants.cs" />
+    <Compile Include="Constants\DropdownNamesConstants.cs" />
+    <Compile Include="Constants\FilterNamesContstants.cs" />
+    <Compile Include="Constants\ProductCategoryNamesConstants.cs" />
+    <Compile Include="Constants\SortDropdownConstants.cs" />
+    <Compile Include="Constants\StatesDropdownConstants.cs" />
+    <Compile Include="Constants\StylesFilterConstants.cs" />
+    <Compile Include="Constants\SubjectHeadingDropdownConstants.cs" />
+    <Compile Include="Helpers\ApiHelper.cs" />
     <Compile Include="Helpers\ExtentReportsHelper.cs" />
     <Compile Include="Helpers\GMailHelper.cs" />
     <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Helpers\RandomHelper.cs" />
     <Compile Include="Helpers\WaitHelper.cs" />
+    <Compile Include="PageObjects\AddressesPage.cs" />
+    <Compile Include="PageObjects\AddressForm.cs" />
+    <Compile Include="PageObjects\AuthenticationPage.cs" />
+    <Compile Include="PageObjects\BasePage.cs" />
+    <Compile Include="PageObjects\CheckoutPage.cs" />
+    <Compile Include="PageObjects\ContactPage.cs" />
+    <Compile Include="PageObjects\ForgotPasswordPage.cs" />
+    <Compile Include="PageObjects\HomePage.cs" />
+    <Compile Include="PageObjects\MyAccountPage.cs" />
+    <Compile Include="PageObjects\MyWishListsPage.cs" />
+    <Compile Include="PageObjects\OrderHistoryPage.cs" />
+    <Compile Include="PageObjects\Pages.cs" />
+    <Compile Include="PageObjects\ProductCartPopup.cs" />
+    <Compile Include="PageObjects\ProductPage.cs" />
+    <Compile Include="PageObjects\PersonalInformationForm.cs" />
+    <Compile Include="PageObjects\RegistrationForm.cs" />
+    <Compile Include="PageObjects\ReviewPopup.cs" />
+    <Compile Include="PageObjects\SearchResultPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\UiTestCases\AccountManagement\Logout.cs" />
+    <Compile Include="TestCases\UiTestCases\Authentication\Login.cs" />
     <Compile Include="TestCases\BaseSuite.cs" />
     <Compile Include="TestCases\BaseTest.cs" />
+    <Compile Include="TestCases\UiTestCases\Cart\CartModifications.cs" />
+    <Compile Include="TestCases\UiTestCases\ContactPage\SendMessage.cs" />
+    <Compile Include="TestCases\UiTestCases\HomePage\AddProduct.cs" />
+    <Compile Include="TestCases\UiTestCases\MyAccount\MyAddresses.cs" />
+    <Compile Include="TestCases\UiTestCases\MyAccount\MyWishLists.cs" />
+    <Compile Include="TestCases\UiTestCases\MyAccount\OrderHistory.cs" />
+    <Compile Include="TestCases\UiTestCases\MyAccount\PersonalInformation.cs" />
+    <Compile Include="TestCases\UiTestCases\PDP\AddProduct.cs" />
+    <Compile Include="TestCases\UiTestCases\PDP\PdpDisplay.cs" />
+    <Compile Include="TestCases\UiTestCases\PDP\Reviews.cs" />
+    <Compile Include="TestCases\UiTestCases\PLP\AddProduct.cs" />
+    <Compile Include="TestCases\UiTestCases\PLP\FilteringRule.cs" />
+    <Compile Include="TestCases\UiTestCases\PLP\SortingRule.cs" />
+    <Compile Include="TestCases\UiTestCases\Search\Plp.cs" />
+    <Compile Include="TestCases\UiTestCases\Search\SearchResultPopup.cs" />
+    <Compile Include="TestCases\UiTestCases\UserFlow\Checkout.cs" />
     <Compile Include="WrapperElement\WrapperWebElement.cs" />
     <Compile Include="WrapperFactory\WebDriverFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="allureConfig.json" />
-    <None Include="allureConfig.Template.json" />
+    <None Include="allureConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="App.config" />
-    <None Include="Configurations\Environment.config" />
-    <None Include="credentials.json" />
-    <None Include="log4net.config" />
+    <None Include="Configurations\Environment.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Constants\" />
-    <Folder Include="PageObjects\" />
-    <Folder Include="TestCases\Authentication\" />
-    <Folder Include="TestCases\Cart\" />
-    <Folder Include="TestCases\Checkout\" />
-    <Folder Include="TestCases\ContactPage\" />
-    <Folder Include="TestCases\HomePage\" />
-    <Folder Include="TestCases\MyAccount\" />
-    <Folder Include="TestCases\PDP\" />
-    <Folder Include="TestCases\PLP\" />
-    <Folder Include="TestCases\Search\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Drivers\chromedriver.exe" />
   </ItemGroup>
