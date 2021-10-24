@@ -52,6 +52,8 @@ namespace AutomationPracticeProject.WrapperFactory
                     {
                         _driver = new ChromeDriver(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "../../Drivers/"));
                         Drivers.Add("Chrome", Driver);
+                        ChromeOptions options = new ChromeOptions();
+                        options.AddArgument("no-sandbox");
                     }
                     break;
             }
