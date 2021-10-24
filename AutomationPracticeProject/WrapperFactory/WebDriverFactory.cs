@@ -54,6 +54,7 @@ namespace AutomationPracticeProject.WrapperFactory
                         Drivers.Add("Chrome", Driver);
                         ChromeOptions options = new ChromeOptions();
                         options.AddArgument("no-sandbox");
+                        _driver.Manage().Timeouts().PageLoad.Add(TimeSpan.FromSeconds(70));
                     }
                     break;
             }

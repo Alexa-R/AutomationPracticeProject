@@ -27,7 +27,6 @@ namespace AutomationPracticeProject.TestCases
             WebDriverFactory.Driver.Manage().Window.Maximize();
             LogHelper.Info("Browser maximized.");
             WebDriverFactory.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
-            WebDriverFactory.Driver.Manage().Timeouts().PageLoad.Add(TimeSpan.FromSeconds(30));
         }
 
         [TearDown]
